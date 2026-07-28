@@ -4,6 +4,7 @@ import { ListCard } from "@/components/ui/Card";
 import { DomainIcon } from "@/components/ui/DomainIcon";
 import { JoinCta } from "@/components/sections/JoinCta";
 import { hallOfFame } from "@/data";
+import { toneChip, toTone } from "@/lib/palette";
 
 export const metadata: Metadata = {
   title: "Hall of Fame",
@@ -24,14 +25,10 @@ export default function HallOfFamePage() {
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {hallOfFame.map((category) => (
             <li key={category.id}>
-              <ListCard accent={`hsl(${category.hue} 75% 58%)`} className="flex h-full flex-col p-7 sm:p-8">
+              <ListCard accent={`var(--tone-${toTone(category.tone)})`} className="flex h-full flex-col p-7 sm:p-8">
                 <span
                   className="grid h-11 w-11 place-items-center rounded-md border"
-                  style={{
-                    borderColor: `hsl(${category.hue} 70% 55% / 0.28)`,
-                    background: `hsl(${category.hue} 70% 50% / 0.09)`,
-                    color: `hsl(${category.hue} 80% 66%)`,
-                  }}
+                  style={toneChip(toTone(category.tone))}
                 >
                   <DomainIcon name={category.icon} className="h-[18px] w-[18px]" />
                 </span>

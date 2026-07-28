@@ -21,7 +21,7 @@ Kryptonex is the student community where builders become founders, cybersecurity
 AI engineers and innovators. This site is its public front door — announcements, the event
 calendar, the learning path, member projects, the resource library, the council and recruitment.
 
-A multi-page Next.js application with twelve routes and an eleven-section landing page.
+A multi-page Next.js application with twelve routes and a ten-section landing page.
 Everything it displays is **data-driven**: the stats band, command palette, event timeline,
 roster, projects and resources all derive from JSON files in `src/data`. Update the data, and the
 whole site updates.
@@ -49,8 +49,8 @@ Then open <http://localhost:3000>.
 
 | Route            | What it is                                                |
 | ---------------- | --------------------------------------------------------- |
-| `/`              | Landing page — hero, announcements, events, why, mission,  |
-|                  | numbers, gallery, partners, resources, team, newsletter    |
+| `/`              | Landing page — hero, community photo, announcements,       |
+|                  | events, why, mission, numbers, gallery, partners, news     |
 | `/about`         | Story, mission and vision, learning path, numbers          |
 | `/events`        | Full calendar, filterable by time, type and keyword        |
 | `/announcements` | Everything currently open                                  |
@@ -127,24 +127,27 @@ A few things are deliberately marked as placeholders rather than invented:
 
 ## Design system
 
-Dark is the canonical theme; light is fully supported and persists across visits. The palette is
-deliberately restrained — one accent that carries meaning, with the university's brand colours
-reserved for identity moments.
+Colour comes straight from the **DPGU / STR Brand & Identity Guidelines** and the Kryptonex
+shield — nothing in the interface sits outside that palette.
 
-| Token       | Dark                    | Role                                        |
-| ----------- | ----------------------- | ------------------------------------------- |
-| `--bg`      | `#050505`               | Page background                             |
-| `--surface` | `#101012`               | Cards and panels                            |
-| `--border`  | `rgba(255,255,255,.08)` | Hairlines                                   |
-| `--accent`  | `#4d8dff`               | The single primary accent                   |
-| `--emerald` | `#34c76a`               | Live / open status                          |
-| `--gold`    | `#d1a550`               | DPGU Sand Brown — flagship events           |
-| `--crimson` | `#d94b45`               | DPGU Red Brown — identity                   |
+| Brand colour     | Hex       | Role in the interface                                |
+| ---------------- | --------- | ---------------------------------------------------- |
+| Red Brown        | `#b22b2f` | Primary — buttons, links, focus rings, section index |
+| Sand Brown       | `#d1a550` | Secondary — flagship markers, open status, gradients |
+| Medium Grey      | `#6b6d71` | Body text in light mode, exactly as the manual sets  |
+| White            | `#ffffff` | Light-mode ground                                    |
 
-Gold and crimson come from the STR Brand & Identity Guidelines (`#d1a550` / `#b22b2f`, lifted for
-legibility on dark surfaces). Typography is **Inter**, also per the brand guidelines, with
-**JetBrains Mono** reserved for metadata, code and eyebrow labels. The DPGU lockup always renders
-on a white plate, as the guidelines require.
+The two chromatic anchors sit ~42° apart, so the scheme is **analogous** — harmonious but low in
+hue contrast. Separation therefore comes from *lightness*: Red Brown is dark and saturated, Sand
+Brown light and warm. Category coding (teams, resources, event types, announcements) uses a
+**six-step ramp interpolated between the two anchors** (`--tone-1` … `--tone-6`), so every accent
+on the site is a blend of the two brand colours and nothing reads as off-brand. Each step has a
+text-safe counterpart (`--tone-N-fg`) tuned per theme.
+
+Neutrals are deliberately **warm** — the dark ground is `#0a0708` rather than a neutral black — so
+the greys share the brand's temperature instead of fighting it. Typography is **Inter** per the
+manual, with **JetBrains Mono** for metadata and eyebrow labels, and icons are outlined (never
+glyph), also per the manual. The DPGU lockup always renders on a white plate.
 
 ## Accessibility & performance
 

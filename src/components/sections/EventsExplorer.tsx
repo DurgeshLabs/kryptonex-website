@@ -8,15 +8,15 @@ import { events, eventTypes, groupEventsByMonth } from "@/data";
 import { cn, formatShortDate, todayISO } from "@/lib/utils";
 import type { EventType } from "@/types";
 
-type Tone = "neutral" | "accent" | "violet" | "gold" | "emerald" | "crimson" | "amber";
+type Tone = "neutral" | 1 | 2 | 3 | 4 | 5 | 6;
 
 const TYPE_TONE: Record<EventType, Tone> = {
-  Workshop: "accent",
-  "Guest Talk": "violet",
-  Competition: "amber",
-  Hackathon: "gold",
-  Social: "emerald",
-  Meetup: "crimson",
+  Workshop: 3,
+  "Guest Talk": 2,
+  Competition: 4,
+  Hackathon: 5,
+  Social: 6,
+  Meetup: 1,
   Visit: "neutral",
 };
 

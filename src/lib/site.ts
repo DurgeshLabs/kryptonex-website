@@ -94,6 +94,7 @@ export const routes = [
 /** Section anchors on the landing page, in document order. */
 export const homeSections = [
   "hero",
+  "community",
   "announcements",
   "events",
   "why",
@@ -101,8 +102,6 @@ export const homeSections = [
   "numbers",
   "gallery",
   "partners",
-  "resources",
-  "team",
   "newsletter",
   "join",
 ] as const;

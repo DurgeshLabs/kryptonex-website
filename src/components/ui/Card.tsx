@@ -45,7 +45,7 @@ export function Card({
           aria-hidden
           className="pointer-events-none absolute inset-0 transition-opacity duration-300"
           style={{
-            background: `radial-gradient(340px circle at ${pos.x}% ${pos.y}%, color-mix(in oklab, var(--accent) 7%, transparent), transparent 60%)`,
+            background: `radial-gradient(340px circle at ${pos.x}% ${pos.y}%, color-mix(in oklab, var(--accent) 8%, transparent), transparent 60%)`,
           }}
         />
       )}

@@ -5,6 +5,7 @@ import { ArrowRight, FileDown } from "lucide-react";
 import { Section, SectionHeader, Stagger, staggerItem } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { DomainIcon } from "@/components/ui/DomainIcon";
+import { toneChip, toTone } from "@/lib/palette";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { derived, resources } from "@/data";
 
@@ -31,11 +32,7 @@ export function ResourceLibrary({ index }: { index?: string } = {}) {
               <div className="flex items-start justify-between gap-4">
                 <span
                   className="grid h-10 w-10 place-items-center rounded-md border"
-                  style={{
-                    borderColor: `hsl(${category.hue} 70% 55% / 0.28)`,
-                    background: `hsl(${category.hue} 70% 50% / 0.09)`,
-                    color: `hsl(${category.hue} 80% 66%)`,
-                  }}
+                  style={toneChip(toTone(category.tone))}
                 >
                   <DomainIcon name={category.icon} className="h-[17px] w-[17px]" />
                 </span>

@@ -30,15 +30,13 @@ export interface KxEvent {
   summary: string;
 }
 
-export type AnnouncementTone = "accent" | "violet" | "gold" | "emerald" | "neutral";
-
 export interface Announcement {
   id: string;
   title: string;
   kicker: string;
   body: string;
   meta: string;
-  tone: AnnouncementTone;
+  tone: number;
   priority: number;
   ticker: string;
   cta?: { label: string; href: string };
@@ -50,7 +48,7 @@ export interface Domain {
   icon: string;
   summary: string;
   topics: string[];
-  hue: number;
+  tone: number;
 }
 
 export interface LearningStep {
@@ -88,7 +86,7 @@ export interface HallOfFameCategory {
   icon: string;
   summary: string;
   criteria: string;
-  hue: number;
+  tone: number;
 }
 
 export interface ResourceCategory {
@@ -98,7 +96,7 @@ export interface ResourceCategory {
   summary: string;
   items: string[];
   count: number;
-  hue: number;
+  tone: number;
 }
 
 export interface Partner {
@@ -136,7 +134,12 @@ export interface GalleryItem {
   caption: string;
   category: string;
   span: "sm" | "md" | "lg" | "xl";
-  hue: number;
+  tone: number;
+  /** Path under /public. When present a real photo renders instead of a plate. */
+  image?: string;
+  /** Intrinsic size of `image`, required by next/image. */
+  width?: number;
+  height?: number;
 }
 
 export interface BlogPost {

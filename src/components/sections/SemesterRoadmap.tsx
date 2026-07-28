@@ -46,7 +46,7 @@ export function SemesterRoadmap({ index }: { index?: string } = {}) {
                 className={cn(
                   "flex-1 rounded-lg border border-line bg-surface p-6 transition-colors duration-300 hover:border-line-strong sm:p-7",
                   month.status === "current" &&
-                    "border-[color-mix(in_oklab,var(--accent)_26%,transparent)]",
+                    "border-[color-mix(in_oklab,var(--accent)_30%,transparent)]",
                 )}
               >
                 <div className="flex flex-wrap items-center gap-2.5">
@@ -54,7 +54,7 @@ export function SemesterRoadmap({ index }: { index?: string } = {}) {
                     {month.month}
                   </span>
                   {month.status === "current" && (
-                    <Badge tone="accent" dot>
+                    <Badge tone="brand" dot>
                       Now
                     </Badge>
                   )}

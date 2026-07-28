@@ -1,14 +1,17 @@
 {
-  "name": "Kryptonex — Cybersecurity & CTF Community",
+  "name": "Kryptonex \u2014 Student Innovation Community",
   "short_name": "Kryptonex",
-  "description": "DPGU's dedicated cybersecurity and Capture-the-Flag community at the School of Technology and Research, Pune.",
+  "description": "Build. Learn. Innovate. Lead. The student innovation community at the School of Technology and Research, DPGU, Pune.",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
-  "background_color": "#050505",
-  "theme_color": "#050505",
+  "background_color": "#0a0708",
+  "theme_color": "#0a0708",
   "orientation": "portrait-primary",
-  "categories": ["education", "productivity"],
+  "categories": [
+    "education",
+    "productivity"
+  ],
   "lang": "en-IN",
   "icons": [
     {

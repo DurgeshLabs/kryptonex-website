@@ -3,6 +3,7 @@ import { FileDown } from "lucide-react";
 import { PageHeader, Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { DomainIcon } from "@/components/ui/DomainIcon";
+import { toneChip, toTone } from "@/lib/palette";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { JoinCta } from "@/components/sections/JoinCta";
 import { derived, resources } from "@/data";
@@ -29,11 +30,7 @@ export default function ResourcesPage() {
               <div className="flex items-start justify-between gap-4">
                 <span
                   className="grid h-11 w-11 place-items-center rounded-md border"
-                  style={{
-                    borderColor: `hsl(${category.hue} 70% 55% / 0.28)`,
-                    background: `hsl(${category.hue} 70% 50% / 0.09)`,
-                    color: `hsl(${category.hue} 80% 66%)`,
-                  }}
+                  style={toneChip(toTone(category.tone))}
                 >
                   <DomainIcon name={category.icon} className="h-[18px] w-[18px]" />
                 </span>

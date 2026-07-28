@@ -6,15 +6,17 @@ import { Section, SectionHeader, Stagger, staggerItem } from "@/components/ui/Se
 import { LinkButton } from "@/components/ui/LinkButton";
 import { derived, leadership } from "@/data";
 import { initials } from "@/lib/utils";
+import { toneChip, type ToneIndex } from "@/lib/palette";
 import type { TeamName } from "@/types";
 
-export const TEAM_HUE: Record<TeamName, number> = {
-  Leadership: 214,
-  Technical: 262,
-  Events: 158,
-  Marketing: 32,
-  Sponsorship: 340,
-  Documentation: 190,
+/** Each team gets a step on the brand ramp — red through gold, nothing outside it. */
+export const TEAM_TONE: Record<TeamName, ToneIndex> = {
+  Leadership: 1,
+  Technical: 2,
+  Events: 3,
+  Marketing: 4,
+  Sponsorship: 5,
+  Documentation: 6,
 };
 
 const SOCIALS = [
@@ -41,7 +43,7 @@ export function LeadershipTeam({ index }: { index?: string } = {}) {
 
       <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {leadership.map((member) => {
-          const hue = TEAM_HUE[member.team];
+          const tone = TEAM_TONE[member.team];
           return (
             <motion.article
               key={member.id}
@@ -51,11 +53,7 @@ export function LeadershipTeam({ index }: { index?: string } = {}) {
               <div className="flex items-center justify-between gap-3">
                 <span
                   className="grid h-11 w-11 place-items-center rounded-md border font-mono text-[13px] font-medium"
-                  style={{
-                    borderColor: `hsl(${hue} 70% 55% / 0.28)`,
-                    background: `hsl(${hue} 70% 50% / 0.09)`,
-                    color: `hsl(${hue} 80% 68%)`,
-                  }}
+                  style={toneChip(tone)}
                 >
                   {initials(member.name)}
                 </span>

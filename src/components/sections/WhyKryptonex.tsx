@@ -22,7 +22,7 @@ const POINTS = [
   },
 ];
 
-export function WhyKryptonex() {
+export function WhyKryptonex({ index }: { index?: string } = {}) {
   return (
     <Section id="why" bordered container={false} className="relative overflow-hidden">
       <div className="container-page relative">
@@ -33,7 +33,7 @@ export function WhyKryptonex() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl"
         >
-          <Eyebrow index="03">Why Kryptonex</Eyebrow>
+          <Eyebrow index={index}>Why Kryptonex</Eyebrow>
           <h2 className="mt-6 text-[clamp(2.2rem,5.4vw,4rem)] leading-[1.05] font-semibold tracking-[-0.042em]">
             <span className="block text-fg-subtle">College teaches subjects.</span>
             <span className="block text-fg">We build careers.</span>

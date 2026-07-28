@@ -40,9 +40,9 @@ export type TerminalLine =
   | { kind: "out"; text: string; tone?: "ok" | "warn" | "info" | "muted" };
 
 const toneClass = {
-  ok: "text-emerald",
-  warn: "text-gold",
-  info: "text-accent-soft",
+  ok: "text-[var(--tone-5-fg)]",
+  warn: "text-[var(--tone-4-fg)]",
+  info: "text-[var(--tone-2-fg)]",
   muted: "text-zinc-500",
 } as const;
 

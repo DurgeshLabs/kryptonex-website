@@ -5,7 +5,7 @@
     "caption": "Hands on keyboards, environments open, everyone working the same target.",
     "category": "Workshops",
     "span": "lg",
-    "hue": 214
+    "tone": 1
   },
   {
     "id": "hackathon-floor",
@@ -13,15 +13,18 @@
     "caption": "Hour nineteen. Four monitors, one working demo, no regrets yet.",
     "category": "Hackathons",
     "span": "md",
-    "hue": 38
+    "tone": 5
   },
   {
     "id": "industry-visit",
     "title": "Industry Visit",
-    "caption": "Inside a working engineering floor, asking the questions a syllabus can't answer.",
+    "caption": "Members and faculty outside the host facility, asking the questions a syllabus can't answer.",
     "category": "Industry Visits",
-    "span": "md",
-    "hue": 190
+    "span": "lg",
+    "tone": 3,
+    "image": "/photos/community-industry-visit.jpg",
+    "width": 2400,
+    "height": 1158
   },
   {
     "id": "meetup-talk",
@@ -29,7 +32,7 @@
     "caption": "Founders who started on campus, on what they'd do differently.",
     "category": "Meetups",
     "span": "xl",
-    "hue": 32
+    "tone": 4
   },
   {
     "id": "open-source-sprint",
@@ -37,7 +40,7 @@
     "caption": "Reading someone else's codebase until the first pull request lands.",
     "category": "Workshops",
     "span": "md",
-    "hue": 158
+    "tone": 6
   },
   {
     "id": "community-night",
@@ -45,7 +48,7 @@
     "caption": "The part of the club that isn't on any curriculum.",
     "category": "Community",
     "span": "md",
-    "hue": 262
+    "tone": 2
   },
   {
     "id": "ctf-scoreboard",
@@ -53,7 +56,7 @@
     "caption": "Scoreboard live, clock running, six categories open.",
     "category": "Hackathons",
     "span": "lg",
-    "hue": 340
+    "tone": 1
   },
   {
     "id": "setup-crew",
@@ -61,6 +64,6 @@
     "caption": "Two hours before doors open. The part nobody photographs.",
     "category": "Behind The Scenes",
     "span": "md",
-    "hue": 24
+    "tone": 4
   }
 ]

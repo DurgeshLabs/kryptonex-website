@@ -8,7 +8,8 @@ import { NeuralField } from "@/components/fx/NeuralField";
 import { communityStats, derived, domains } from "@/data";
 import { site } from "@/lib/site";
 
-const WORDS = ["Build", "Learn", "Innovate", "Lead"];
+const WORDS = ["Build", "Learn", "Innovate"];
+const FINAL_WORD = "Lead";
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -33,8 +34,8 @@ export function Hero() {
               className="flex items-center gap-3"
             >
               <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald opacity-70" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--brand-gold)] opacity-70" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--brand-gold)]" />
               </span>
               <p className="font-mono text-[11px] tracking-[0.16em] text-fg-subtle uppercase">
                 Recruitment open · {site.parent}
@@ -43,6 +44,12 @@ export function Hero() {
 
             <h1 className="mt-8 text-[clamp(3rem,9vw,6.5rem)] leading-[0.92] font-semibold tracking-[-0.05em] text-fg">
               <RevealLines lines={WORDS} delay={0.1} stagger={0.08} />
+              {/* The closing word carries the shield's own red-to-gold gradient. */}
+              <RevealLines
+                lines={[FINAL_WORD]}
+                delay={0.1 + WORDS.length * 0.08}
+                lineClassName="brand-gradient-text"
+              />
             </h1>
 
             <motion.p

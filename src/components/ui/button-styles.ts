@@ -1,11 +1,17 @@
-export type ButtonVariant = "primary" | "secondary" | "ghost" | "inverse";
+export type ButtonVariant = "primary" | "secondary" | "gold" | "ghost" | "inverse";
 export type ButtonSize = "sm" | "md" | "lg";
 
+/**
+ * Primary is the brand Red Brown — the shield colour — with white text, which
+ * clears AA at this weight. Gold is the Sand Brown counterpart for moments that
+ * need warmth without competing with the primary action.
+ */
 export const buttonVariants: Record<ButtonVariant, string> = {
   primary:
-    "bg-accent text-white hover:brightness-110 active:brightness-95 border border-transparent",
+    "bg-accent-strong text-white border border-transparent hover:brightness-115 active:brightness-95",
   secondary:
-    "bg-transparent text-fg border border-line-strong hover:bg-surface hover:border-fg-subtle",
+    "bg-transparent text-fg border border-line-strong hover:bg-surface hover:border-accent/50",
+  gold: "bg-[var(--brand-gold)] text-[#2a1d06] border border-transparent hover:brightness-108",
   ghost: "bg-transparent text-fg-muted border border-transparent hover:text-fg hover:bg-surface",
   inverse: "bg-fg text-bg border border-transparent hover:opacity-90",
 };

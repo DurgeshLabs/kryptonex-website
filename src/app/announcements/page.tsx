@@ -6,20 +6,12 @@ import { ListCard } from "@/components/ui/Card";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { JoinCta } from "@/components/sections/JoinCta";
 import { announcements } from "@/data";
-import type { AnnouncementTone } from "@/types";
+import { toTone } from "@/lib/palette";
 
 export const metadata: Metadata = {
   title: "Announcements",
   description:
     "Everything currently open at Kryptonex — recruitment windows, workshop registrations, competition sign-ups and upcoming sessions.",
-};
-
-const TONE_VAR: Record<AnnouncementTone, string> = {
-  accent: "var(--accent)",
-  violet: "var(--violet)",
-  gold: "var(--gold)",
-  emerald: "var(--emerald)",
-  neutral: "var(--fg-subtle)",
 };
 
 export default function AnnouncementsPage() {
@@ -35,10 +27,10 @@ export default function AnnouncementsPage() {
         <ul className="grid gap-4 md:grid-cols-2">
           {announcements.map((item) => (
             <li key={item.id}>
-              <ListCard accent={TONE_VAR[item.tone]} className="flex h-full flex-col p-7 sm:p-8">
+              <ListCard accent={`var(--tone-${toTone(item.tone)})`} className="flex h-full flex-col p-7 sm:p-8">
                 <p
                   className="font-mono text-[10px] tracking-[0.16em] uppercase"
-                  style={{ color: TONE_VAR[item.tone] }}
+                  style={{ color: `var(--tone-${toTone(item.tone)}-fg)` }}
                 >
                   {item.kicker}
                 </p>

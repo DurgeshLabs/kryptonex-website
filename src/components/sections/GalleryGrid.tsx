@@ -1,12 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { GalleryPlate } from "@/components/ui/GalleryPlate";
 import { gallery, galleryCategories } from "@/data";
 import { useLockBodyScroll } from "@/lib/hooks";
-import { cn } from "@/lib/utils";
+import { asset, cn } from "@/lib/utils";
 import type { GalleryItem } from "@/types";
 
 const SPAN: Record<GalleryItem["span"], string> = {
@@ -15,6 +16,21 @@ const SPAN: Record<GalleryItem["span"], string> = {
   lg: "sm:col-span-2 sm:row-span-2",
   xl: "sm:col-span-2 sm:row-span-3",
 };
+
+/** A tile's visual: the real photograph when there is one, the generated plate otherwise. */
+function TileMedia({ item, dense }: { item: GalleryItem; dense?: boolean }) {
+  if (!item.image) return <GalleryPlate item={item} dense={dense} />;
+  return (
+    <Image
+      src={asset(item.image)}
+      alt={item.caption}
+      width={item.width ?? 1600}
+      height={item.height ?? 900}
+      sizes="(max-width: 640px) 100vw, 50vw"
+      className="absolute inset-0 h-full w-full object-cover"
+    />
+  );
+}
 
 /** Filterable masonry grid with a lightbox. Shared by the landing page and /gallery. */
 export function GalleryGrid({ showFilters = true }: { showFilters?: boolean }) {
@@ -77,7 +93,7 @@ export function GalleryGrid({ showFilters = true }: { showFilters?: boolean }) {
               )}
             >
               <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.04]">
-                <GalleryPlate item={item} dense={item.span === "xl" || item.span === "lg"} />
+                <TileMedia item={item} dense={item.span === "xl" || item.span === "lg"} />
               </div>
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.8),transparent_55%)]" />
 
@@ -115,7 +131,7 @@ export function GalleryGrid({ showFilters = true }: { showFilters?: boolean }) {
               className="relative w-[min(94vw,880px)] overflow-hidden rounded-xl border border-line-strong"
             >
               <div className="relative aspect-[16/9]">
-                <GalleryPlate item={active} dense />
+                <TileMedia item={active} dense />
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.85),transparent_58%)]" />
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                   <span className="font-mono text-[10px] tracking-[0.16em] text-white/45 uppercase">

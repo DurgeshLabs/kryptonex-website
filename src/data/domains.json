@@ -4,39 +4,62 @@
     "name": "Cybersecurity",
     "icon": "shield",
     "summary": "Learn how systems fail, then learn to defend them. Everything happens inside sanctioned labs and CTF ranges.",
-    "topics": ["CTFs", "SOC & Blue Team", "Ethical Hacking", "Networking"],
-    "hue": 214
+    "topics": [
+      "CTFs",
+      "SOC & Blue Team",
+      "Ethical Hacking",
+      "Networking"
+    ],
+    "tone": 1
   },
   {
     "id": "ai",
     "name": "Artificial Intelligence",
     "icon": "brain",
     "summary": "Beyond calling an API. Build agents that do real work, understand what models can and cannot do, and ship them.",
-    "topics": ["LLMs", "Agents", "Automation", "Machine Learning"],
-    "hue": 262
+    "topics": [
+      "LLMs",
+      "Agents",
+      "Automation",
+      "Machine Learning"
+    ],
+    "tone": 3
   },
   {
     "id": "development",
     "name": "Development",
     "icon": "code",
     "summary": "The craft of shipping software other people depend on — from interface to infrastructure.",
-    "topics": ["Frontend", "Backend", "Cloud", "Open Source"],
-    "hue": 158
+    "topics": [
+      "Frontend",
+      "Backend",
+      "Cloud",
+      "Open Source"
+    ],
+    "tone": 5
   },
   {
     "id": "entrepreneurship",
     "name": "Entrepreneurship",
     "icon": "rocket",
     "summary": "Turning a project into a product. Validation, positioning, pitching, and the discipline of running something.",
-    "topics": ["Startups", "Pitching", "Leadership"],
-    "hue": 32
+    "topics": [
+      "Startups",
+      "Pitching",
+      "Leadership"
+    ],
+    "tone": 4
   },
   {
     "id": "design",
     "name": "Design",
     "icon": "palette",
     "summary": "Why some products feel considered and others feel assembled. Interface, identity and motion as one system.",
-    "topics": ["UI & UX", "Branding", "Motion"],
-    "hue": 340
+    "topics": [
+      "UI & UX",
+      "Branding",
+      "Motion"
+    ],
+    "tone": 2
   }
 ]

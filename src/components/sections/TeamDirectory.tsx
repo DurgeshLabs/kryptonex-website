@@ -4,7 +4,8 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Search, X } from "lucide-react";
 import { team, teamNames } from "@/data";
-import { TEAM_HUE } from "./LeadershipTeam";
+import { TEAM_TONE } from "./LeadershipTeam";
+import { toneChip } from "@/lib/palette";
 import { cn, initials } from "@/lib/utils";
 import type { TeamName } from "@/types";
 
@@ -79,7 +80,7 @@ export function TeamDirectory() {
       <motion.div layout className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         <AnimatePresence mode="popLayout" initial={false}>
           {filtered.map((member, i) => {
-            const hue = TEAM_HUE[member.team];
+            const tone = TEAM_TONE[member.team];
             return (
               <motion.article
                 key={member.id}
@@ -93,11 +94,7 @@ export function TeamDirectory() {
                 <div className="flex items-center justify-between gap-2">
                   <span
                     className="grid h-10 w-10 shrink-0 place-items-center rounded-md border font-mono text-[12.5px] font-medium"
-                    style={{
-                      borderColor: `hsl(${hue} 70% 55% / 0.28)`,
-                      background: `hsl(${hue} 70% 50% / 0.09)`,
-                      color: `hsl(${hue} 80% 68%)`,
-                    }}
+                    style={toneChip(tone)}
                   >
                     {initials(member.name)}
                   </span>

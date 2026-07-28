@@ -7,21 +7,13 @@ import { Section, SectionHeader, Stagger, staggerItem } from "@/components/ui/Se
 import { ListCard } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { announcements } from "@/data";
-import type { AnnouncementTone } from "@/types";
+import { toTone } from "@/lib/palette";
 
-const TONE_VAR: Record<AnnouncementTone, string> = {
-  accent: "var(--accent)",
-  violet: "var(--violet)",
-  gold: "var(--gold)",
-  emerald: "var(--emerald)",
-  neutral: "var(--fg-subtle)",
-};
-
-export function LiveAnnouncements() {
+export function LiveAnnouncements({ index }: { index?: string } = {}) {
   return (
     <Section id="announcements" bordered>
       <SectionHeader
-        index="01"
+        index={index}
         eyebrow="Latest updates"
         title="What's live right now"
         description="Recruitment windows, registrations and sessions currently open. Everything here is actionable today."
@@ -36,10 +28,10 @@ export function LiveAnnouncements() {
       <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {announcements.slice(0, 4).map((item) => (
           <motion.div key={item.id} variants={staggerItem}>
-            <ListCard accent={TONE_VAR[item.tone]} className="flex h-full flex-col p-6">
+            <ListCard accent={`var(--tone-${toTone(item.tone)})`} className="flex h-full flex-col p-6">
               <p
                 className="font-mono text-[10px] tracking-[0.16em] uppercase"
-                style={{ color: TONE_VAR[item.tone] }}
+                style={{ color: `var(--tone-${toTone(item.tone)}-fg)` }}
               >
                 {item.kicker}
               </p>

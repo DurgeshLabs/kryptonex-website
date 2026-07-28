@@ -11,7 +11,7 @@
       "Open source contribution checklist"
     ],
     "count": 4,
-    "hue": 158
+    "tone": 5
   },
   {
     "id": "cybersecurity",
@@ -25,7 +25,7 @@
       "Responsible disclosure primer"
     ],
     "count": 4,
-    "hue": 214
+    "tone": 1
   },
   {
     "id": "ai",
@@ -39,7 +39,7 @@
       "Evaluating model output"
     ],
     "count": 4,
-    "hue": 262
+    "tone": 3
   },
   {
     "id": "dsa",
@@ -53,7 +53,7 @@
       "Contest preparation guide"
     ],
     "count": 4,
-    "hue": 190
+    "tone": 6
   },
   {
     "id": "resume",
@@ -67,7 +67,7 @@
       "LinkedIn profile audit"
     ],
     "count": 4,
-    "hue": 32
+    "tone": 4
   },
   {
     "id": "interview",
@@ -81,7 +81,7 @@
       "Mock interview format"
     ],
     "count": 4,
-    "hue": 340
+    "tone": 2
   },
   {
     "id": "open-source",
@@ -95,6 +95,6 @@
       "Maintaining your own project"
     ],
     "count": 4,
-    "hue": 24
+    "tone": 5
   }
 ]

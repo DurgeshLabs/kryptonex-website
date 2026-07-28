@@ -7,6 +7,7 @@ import { ListCard } from "@/components/ui/Card";
 import { DomainIcon } from "@/components/ui/DomainIcon";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { hallOfFame } from "@/data";
+import { toneChip, toTone } from "@/lib/palette";
 
 export function HallOfFame() {
   return (
@@ -28,16 +29,12 @@ export function HallOfFame() {
         {hallOfFame.map((category) => (
           <motion.div key={category.id} variants={staggerItem}>
             <ListCard
-              accent={`hsl(${category.hue} 75% 58%)`}
+              accent={`var(--tone-${toTone(category.tone)})`}
               className="flex h-full flex-col p-7"
             >
               <span
                 className="grid h-10 w-10 place-items-center rounded-md border"
-                style={{
-                  borderColor: `hsl(${category.hue} 70% 55% / 0.28)`,
-                  background: `hsl(${category.hue} 70% 50% / 0.09)`,
-                  color: `hsl(${category.hue} 80% 66%)`,
-                }}
+                style={toneChip(toTone(category.tone))}
               >
                 <DomainIcon name={category.icon} className="h-[17px] w-[17px]" />
               </span>

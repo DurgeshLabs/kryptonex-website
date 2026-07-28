@@ -4,37 +4,66 @@
 
 /* ============================================================
    KRYPTONEX DESIGN SYSTEM
-   Brand foundation: DPGU / School of Technology & Research
-   Red Brown #b22b2f · Sand Brown #d1a550 · Medium Grey #6b6d71
-   Product accent: a single restrained blue. Colour carries
-   meaning here — it is not decoration.
+
+   Colour is taken directly from the DPGU / STR Brand & Identity
+   Guidelines and the Kryptonex shield:
+
+     Red Brown    #b22b2f   primary
+     Sand Brown   #d1a550   secondary
+     Medium Grey  #6b6d71   body text / neutral
+     White        #ffffff
+
+   The two chromatic anchors sit ~42° apart on the wheel, so the
+   scheme is analogous — harmonious, but low in hue contrast.
+   Separation therefore comes from *lightness*: Red Brown is dark and
+   saturated, Sand Brown is light and warm. Category coding uses a
+   six-step ramp interpolated between the two anchors, so every accent
+   stays inside the brand arc. Neutrals are warmed to sit with them
+   rather than fight them.
    ============================================================ */
 
 :root {
-  /* Surfaces */
-  --bg: #050505;
-  --bg-elevated: #0a0a0b;
-  --surface: #101012;
-  --surface-2: #16161a;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.13);
+  /* --- Surfaces: warm near-black, sharing the brand's temperature */
+  --bg: #0a0708;
+  --bg-elevated: #100c0d;
+  --surface: #161113;
+  --surface-2: #1e1719;
+  --border: rgba(255, 238, 232, 0.09);
+  --border-strong: rgba(255, 238, 232, 0.16);
 
-  /* Type */
-  --fg: #f5f5f6;
-  --fg-muted: #9d9da6;
-  --fg-subtle: #6d6d78;
+  /* --- Type */
+  --fg: #f8f4f3;
+  --fg-muted: #a49b99;
+  --fg-subtle: #786e6d;
 
-  /* Accents — one primary, used sparingly */
-  --accent: #4d8dff;
-  --accent-soft: #85b0ff;
-  --accent-dim: rgba(77, 141, 255, 0.12);
-  --violet: #8b5cf6;
-  --emerald: #34c76a;
-  --amber: #e0a84a;
+  /* --- Brand anchors, exactly as specified */
+  --brand-red: #b22b2f;
+  --brand-gold: #d1a550;
+  --brand-grey: #6b6d71;
+
+  /* Lifted where legibility on a near-black field demands it */
+  --accent: #e35449; /* Red Brown raised to pass contrast on dark */
+  --accent-strong: #b22b2f; /* the true brand red — fills, not small text */
+  --accent-dim: rgba(227, 84, 73, 0.11);
   --gold: #d1a550;
-  --gold-soft: #e5c07f;
-  --crimson: #d94b45;
+  --gold-bright: #e5c079;
+  --gold-dim: rgba(209, 165, 80, 0.11);
 
+  /* --- Category ramp: six steps interpolated red → gold */
+  --tone-1: #b22b2f;
+  --tone-2: #bf3f2f;
+  --tone-3: #c65e34;
+  --tone-4: #cb7f3f;
+  --tone-5: #d1a550;
+  --tone-6: #dcbe82;
+
+  /* Text-safe versions of the ramp on dark */
+  --tone-1-fg: #e8635a;
+  --tone-2-fg: #e97a5c;
+  --tone-3-fg: #e08f5e;
+  --tone-4-fg: #dda765;
+  --tone-5-fg: #e2bd75;
+  --tone-6-fg: #ead4a6;
 
   color-scheme: dark;
 }
@@ -42,25 +71,39 @@
 .light {
   --bg: #ffffff;
   --bg-elevated: #ffffff;
-  --surface: #fafafa;
-  --surface-2: #f2f2f4;
-  --border: rgba(9, 9, 11, 0.09);
-  --border-strong: rgba(9, 9, 11, 0.16);
+  --surface: #faf8f7;
+  --surface-2: #f2efec;
+  --border: rgba(26, 18, 15, 0.11);
+  --border-strong: rgba(26, 18, 15, 0.19);
 
-  --fg: #09090b;
-  --fg-muted: #55555f;
-  --fg-subtle: #83838f;
+  --fg: #17110f;
+  --fg-muted: #6b6d71; /* the manual's Medium Grey, used exactly as prescribed */
+  --fg-subtle: #8e8f93;
 
-  --accent: #1f66e0;
-  --accent-soft: #3d80f0;
-  --accent-dim: rgba(31, 102, 224, 0.09);
-  --violet: #6d3fd4;
-  --emerald: #16a34a;
-  --amber: #b47919;
-  --gold: #a97c25;
-  --gold-soft: #c9992f;
-  --crimson: #b22b2f;
+  --brand-red: #b22b2f;
+  --brand-gold: #d1a550;
+  --brand-grey: #6b6d71;
 
+  --accent: #b22b2f; /* the true brand red reads correctly on white */
+  --accent-strong: #962226;
+  --accent-dim: rgba(178, 43, 47, 0.08);
+  --gold: #8f6a17; /* darkened for text contrast on white */
+  --gold-bright: #d1a550; /* the true Sand Brown — fills and borders */
+  --gold-dim: rgba(209, 165, 80, 0.16);
+
+  --tone-1: #b22b2f;
+  --tone-2: #a83c25;
+  --tone-3: #9c5522;
+  --tone-4: #8d6a1d;
+  --tone-5: #7d7016;
+  --tone-6: #6b6d71;
+
+  --tone-1-fg: #96222a;
+  --tone-2-fg: #8f3320;
+  --tone-3-fg: #83471c;
+  --tone-4-fg: #755718;
+  --tone-5-fg: #675c13;
+  --tone-6-fg: #5b5d61;
 
   color-scheme: light;
 }
@@ -78,13 +121,12 @@
   --color-fg-subtle: var(--fg-subtle);
 
   --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
-  --color-violet: var(--violet);
-  --color-emerald: var(--emerald);
-  --color-amber: var(--amber);
+  --color-accent-strong: var(--accent-strong);
   --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
-  --color-crimson: var(--crimson);
+  --color-gold-bright: var(--gold-bright);
+  --color-brand-red: var(--brand-red);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-grey: var(--brand-grey);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono-jb), ui-monospace, "SF Mono", monospace;
@@ -125,7 +167,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--accent) 26%, transparent);
+  background: color-mix(in oklab, var(--accent) 30%, transparent);
   color: var(--fg);
 }
 
@@ -137,13 +179,13 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: color-mix(in oklab, var(--fg) 13%, transparent);
+  background: color-mix(in oklab, var(--fg) 14%, transparent);
   border-radius: 99px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in oklab, var(--fg) 24%, transparent);
+  background: color-mix(in oklab, var(--accent) 55%, transparent);
   background-clip: content-box;
 }
 
@@ -176,7 +218,7 @@ p {
 }
 
 @utility glass {
-  background: color-mix(in oklab, var(--bg-elevated) 72%, transparent);
+  background: color-mix(in oklab, var(--bg-elevated) 74%, transparent);
   backdrop-filter: blur(18px) saturate(150%);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
   border: 1px solid var(--border);
@@ -187,20 +229,16 @@ p {
   border: 1px solid var(--border);
 }
 
-@utility rule {
-  background-image: linear-gradient(90deg, var(--border-strong), transparent);
+/* The shield's own gradient: brand red into brand gold. Used sparingly. */
+@utility brand-gradient-text {
+  background-image: linear-gradient(100deg, var(--accent) 0%, var(--gold) 94%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-@utility accent-text {
-  color: var(--accent);
-}
-
-@utility eyebrow-type {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--fg-subtle);
+@utility brand-rule {
+  background-image: linear-gradient(90deg, var(--accent), var(--gold), transparent);
 }
 
 /* ------------------------------------------------------------ effects */

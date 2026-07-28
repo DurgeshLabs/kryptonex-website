@@ -95,7 +95,7 @@ export function NeuralField({
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
           if (dist > linkDistance) continue;
           const alpha = (1 - dist / linkDistance) * 0.3;
-          ctx.strokeStyle = `rgba(109,158,255,${alpha})`;
+          ctx.strokeStyle = `rgba(178,43,47,${alpha * 1.5})`;
           ctx.lineWidth = 0.7;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
@@ -107,7 +107,7 @@ export function NeuralField({
       for (const node of nodes) {
         const near =
           interactive && Math.hypot(node.x - pointer.x, node.y - pointer.y) < 150;
-        ctx.fillStyle = near ? "rgba(139,92,246,0.85)" : "rgba(140,180,255,0.55)";
+        ctx.fillStyle = near ? "rgba(209,165,80,0.9)" : "rgba(196,110,92,0.5)";
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
         ctx.fill();

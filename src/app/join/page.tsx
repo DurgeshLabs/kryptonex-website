@@ -67,7 +67,7 @@ export default function JoinPage() {
           <LinkButton href={site.links.discord} variant="secondary" size="lg">
             Join the community
           </LinkButton>
-          <Badge tone="emerald" dot>
+          <Badge tone="gold" dot>
             Recruitment open
           </Badge>
         </div>
@@ -111,7 +111,7 @@ export default function JoinPage() {
                       key={d}
                       className="flex items-center gap-1.5 rounded border border-line px-2 py-1 text-[11.5px] text-fg-muted"
                     >
-                      <Check className="h-3 w-3 text-emerald" strokeWidth={2.5} />
+                      <Check className="h-3 w-3 text-accent" strokeWidth={2.5} />
                       {d}
                     </li>
                   ))}
@@ -167,7 +167,7 @@ export default function JoinPage() {
             <ul className="mt-7 space-y-3 border-t border-line pt-6">
               {REASSURANCE.map((line) => (
                 <li key={line} className="flex items-start gap-2.5 text-[13.5px] text-fg-muted">
-                  <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald" strokeWidth={2.5} />
+                  <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" strokeWidth={2.5} />
                   {line}
                 </li>
               ))}

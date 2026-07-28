@@ -1,0 +1,58 @@
+[
+  {
+    "id": "join",
+    "step": 1,
+    "title": "Join",
+    "phase": "Month 1",
+    "summary": "You apply, we talk, you pick a domain track. No test, no prerequisite, no gatekeeping."
+  },
+  {
+    "id": "learn",
+    "step": 2,
+    "title": "Learn",
+    "phase": "Months 1–3",
+    "summary": "Weekly hands-on sessions in your track. Structured, sequenced, and taught by people one step ahead of you."
+  },
+  {
+    "id": "build",
+    "step": 3,
+    "title": "Build",
+    "phase": "Months 3–5",
+    "summary": "Your first real project, shipped publicly with a repository someone else could read and run."
+  },
+  {
+    "id": "hackathons",
+    "step": 4,
+    "title": "Hackathons",
+    "phase": "Months 5–8",
+    "summary": "Competing under a clock with a team you did not choose. This is where the learning compounds fastest."
+  },
+  {
+    "id": "leadership",
+    "step": 5,
+    "title": "Leadership",
+    "phase": "Year 2",
+    "summary": "You run the sessions you once attended, author the challenges, and mentor the intake behind you."
+  },
+  {
+    "id": "internship",
+    "step": 6,
+    "title": "Internship",
+    "phase": "Year 2–3",
+    "summary": "A portfolio, a competition record and a reference from someone in industry — the three things that open the first door."
+  },
+  {
+    "id": "placement",
+    "step": 7,
+    "title": "Placement",
+    "phase": "Final year",
+    "summary": "You interview with work to point at rather than a syllabus to recite."
+  },
+  {
+    "id": "founder",
+    "step": 8,
+    "title": "Founder",
+    "phase": "Whenever you're ready",
+    "summary": "For some, the project becomes the company. The alumni network is here for that too."
+  }
+]

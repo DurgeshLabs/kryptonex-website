@@ -1,0 +1,9 @@
+[
+  { "id": "github", "name": "GitHub", "kind": "Platform" },
+  { "id": "gdg", "name": "Google Developer Groups", "kind": "Community" },
+  { "id": "aws", "name": "AWS", "kind": "Cloud" },
+  { "id": "metamask", "name": "MetaMask", "kind": "Web3" },
+  { "id": "agile-network", "name": "Agile Network", "kind": "Industry" },
+  { "id": "str", "name": "School of Technology & Research", "kind": "Institution" },
+  { "id": "dpgu", "name": "DPGU", "kind": "University" }
+]

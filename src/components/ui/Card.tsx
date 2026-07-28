@@ -1,116 +1,82 @@
 "use client";
 
 import { useRef, useState, type ReactNode } from "react";
-import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useFinePointer } from "@/lib/hooks";
 
-/** Base surface card with a cursor-tracking spotlight. */
+/**
+ * Flat surface card. Hover adds a faint cursor-tracking wash rather than a glow —
+ * enough to feel responsive without reading as decoration.
+ */
 export function Card({
   children,
   className,
-  spotlight = true,
+  interactive = true,
 }: {
   children: ReactNode;
   className?: string;
-  spotlight?: boolean;
+  interactive?: boolean;
 }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [pos, setPos] = useState({ x: 50, y: 50 });
-  const [active, setActive] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const fine = useFinePointer();
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
 
   return (
     <div
       ref={ref}
-      onMouseMove={(e) => {
-        if (!spotlight || !ref.current) return;
-        const r = ref.current.getBoundingClientRect();
-        setPos({
-          x: ((e.clientX - r.left) / r.width) * 100,
-          y: ((e.clientY - r.top) / r.height) * 100,
-        });
-      }}
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
+      onMouseMove={
+        interactive && fine
+          ? (e) => {
+              const r = ref.current?.getBoundingClientRect();
+              if (!r) return;
+              setPos({ x: ((e.clientX - r.left) / r.width) * 100, y: ((e.clientY - r.top) / r.height) * 100 });
+            }
+          : undefined
+      }
+      onMouseLeave={() => setPos(null)}
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300",
-        "hover:border-line-strong",
+        "group relative overflow-hidden rounded-lg border border-line bg-surface transition-colors duration-300",
+        interactive && "hover:border-line-strong",
         className,
       )}
     >
-      {spotlight && (
+      {interactive && pos && (
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 transition-opacity duration-300"
           style={{
-            opacity: active ? 1 : 0,
-            background: `radial-gradient(420px circle at ${pos.x}% ${pos.y}%, color-mix(in oklab, var(--neon) 12%, transparent), transparent 62%)`,
+            background: `radial-gradient(340px circle at ${pos.x}% ${pos.y}%, color-mix(in oklab, var(--accent) 7%, transparent), transparent 60%)`,
           }}
         />
       )}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-x-6 top-0 h-px hairline opacity-60"
-      />
       {children}
     </div>
   );
 }
 
-/** 3D tilt-on-hover wrapper. Skipped entirely under reduced-motion. */
-export function TiltCard({
+/** Row-style card used in lists — border on all sides, accent rail on hover. */
+export function ListCard({
   children,
   className,
-  intensity = 9,
-  glare = true,
+  accent,
 }: {
   children: ReactNode;
   className?: string;
-  intensity?: number;
-  glare?: boolean;
+  accent?: string;
 }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const reduce = useReducedMotion();
-
-  const mx = useMotionValue(0.5);
-  const my = useMotionValue(0.5);
-  const sx = useSpring(mx, { stiffness: 200, damping: 22 });
-  const sy = useSpring(my, { stiffness: 200, damping: 22 });
-
-  const rotateX = useTransform(sy, [0, 1], [intensity, -intensity]);
-  const rotateY = useTransform(sx, [0, 1], [-intensity, intensity]);
-  const glareOpacity = useTransform([sx, sy] as const, ([x, y]: number[]) =>
-    Math.min(0.14, Math.hypot(x - 0.5, y - 0.5) * 0.28),
-  );
-  const glareShift = useTransform(sx, [0, 1], ["-30%", "30%"]);
-
-  if (reduce) return <div className={className}>{children}</div>;
-
   return (
-    <div style={{ perspective: 1100 }} className={cn("group/tilt", className)}>
-      <motion.div
-        ref={ref}
-        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        onMouseMove={(e) => {
-          const r = ref.current?.getBoundingClientRect();
-          if (!r) return;
-          mx.set((e.clientX - r.left) / r.width);
-          my.set((e.clientY - r.top) / r.height);
-        }}
-        onMouseLeave={() => {
-          mx.set(0.5);
-          my.set(0.5);
-        }}
-        className="relative h-full w-full [&>*]:h-full"
-      >
-        {children}
-        {glare && (
-          <motion.span
-            aria-hidden
-            style={{ opacity: glareOpacity, x: glareShift }}
-            className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(300px_circle_at_50%_0%,white,transparent_65%)]"
-          />
-        )}
-      </motion.div>
+    <div
+      className={cn(
+        "group relative overflow-hidden rounded-lg border border-line bg-surface transition-colors duration-300 hover:border-line-strong",
+        className,
+      )}
+    >
+      <span
+        aria-hidden
+        className="absolute inset-y-0 left-0 w-[2px] origin-top scale-y-0 transition-transform duration-400 group-hover:scale-y-100"
+        style={{ background: accent ?? "var(--accent)" }}
+      />
+      {children}
     </div>
   );
 }

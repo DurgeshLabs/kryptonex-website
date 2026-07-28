@@ -1,0 +1,62 @@
+[
+  {
+    "id": "why-we-restructured",
+    "title": "Why we restructured Kryptonex around five domains",
+    "excerpt": "A tech club that covers everything ends up teaching nothing in depth. Here's how we picked five tracks and what changed once we did.",
+    "category": "Community",
+    "date": "2026-07-20",
+    "readingTime": "6 min",
+    "author": "Kryptonex Council",
+    "status": "published"
+  },
+  {
+    "id": "first-ctf-writeup",
+    "title": "Anatomy of a first CTF solve",
+    "excerpt": "Walking through a beginner web challenge end to end — including the twenty minutes spent going down the wrong path.",
+    "category": "Cybersecurity",
+    "date": "2026-07-08",
+    "readingTime": "9 min",
+    "author": "Technical Team",
+    "status": "published"
+  },
+  {
+    "id": "reading-unfamiliar-codebase",
+    "title": "How to read a codebase you've never seen",
+    "excerpt": "The single most useful skill nobody teaches in a course. A repeatable method for orienting yourself in fifteen minutes.",
+    "category": "Development",
+    "date": "2026-06-24",
+    "readingTime": "7 min",
+    "author": "Technical Team",
+    "status": "published"
+  },
+  {
+    "id": "agents-that-do-work",
+    "title": "Building agents that do real work",
+    "excerpt": "Most agent demos fall over on contact with reality. What actually holds up: narrow scope, real tools, and honest evaluation.",
+    "category": "Artificial Intelligence",
+    "date": "2026-06-10",
+    "readingTime": "8 min",
+    "author": "Technical Team",
+    "status": "published"
+  },
+  {
+    "id": "running-a-hackathon",
+    "title": "What it takes to run a hackathon",
+    "excerpt": "Logistics, sponsorship, judging criteria and the failure modes we planned around. Written for the next organising team.",
+    "category": "Community",
+    "date": "2026-05-28",
+    "readingTime": "11 min",
+    "author": "Events Team",
+    "status": "published"
+  },
+  {
+    "id": "portfolio-that-gets-read",
+    "title": "A portfolio that actually gets read",
+    "excerpt": "Recruiters spend under a minute on your work. What to put in front of them, and what to cut entirely.",
+    "category": "Careers",
+    "date": "2026-05-14",
+    "readingTime": "5 min",
+    "author": "Kryptonex Council",
+    "status": "published"
+  }
+]

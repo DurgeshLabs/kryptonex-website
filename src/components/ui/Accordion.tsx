@@ -25,11 +25,11 @@ export function Accordion({
   const uid = useId();
 
   return (
-    <div className={cn("divide-y divide-[var(--border)] border-y border-line", className)}>
+    <div className={cn("border-t border-line", className)}>
       {items.map((item) => {
         const isOpen = open === item.id;
         return (
-          <div key={item.id} className="group">
+          <div key={item.id} className="border-b border-line">
             <h3>
               <button
                 type="button"
@@ -37,25 +37,30 @@ export function Accordion({
                 aria-controls={`${uid}-${item.id}`}
                 onClick={() => setOpen(isOpen ? null : item.id)}
                 data-cursor="hover"
-                className="flex w-full items-center justify-between gap-6 py-6 text-left transition-colors hover:text-neon"
+                className="group flex w-full items-start justify-between gap-6 py-5 text-left"
               >
-                <span className="flex flex-1 flex-col gap-1.5">
+                <span className="flex-1">
+                  <span
+                    className={cn(
+                      "block text-[15.5px] leading-snug font-medium tracking-[-0.012em] transition-colors sm:text-[16px]",
+                      isOpen ? "text-fg" : "text-fg group-hover:text-accent",
+                    )}
+                  >
+                    {item.title}
+                  </span>
                   {item.meta && (
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-fg-subtle">
+                    <span className="mt-1.5 block font-mono text-[10px] tracking-[0.14em] text-fg-subtle uppercase">
                       {item.meta}
                     </span>
                   )}
-                  <span className="text-[16.5px] leading-snug font-medium tracking-[-0.015em] text-fg transition-colors group-hover:text-neon sm:text-[17.5px]">
-                    {item.title}
-                  </span>
                 </span>
                 <span
                   className={cn(
-                    "grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-surface transition-all duration-300",
-                    isOpen && "rotate-45 border-neon bg-[color-mix(in_oklab,var(--neon)_14%,transparent)] text-neon",
+                    "mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded border border-line text-fg-subtle transition-all duration-300",
+                    isOpen && "rotate-45 border-accent text-accent",
                   )}
                 >
-                  <Plus className="h-4 w-4" strokeWidth={1.75} />
+                  <Plus className="h-3 w-3" strokeWidth={2} />
                 </span>
               </button>
             </h3>
@@ -66,10 +71,10 @@ export function Accordion({
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="max-w-3xl pr-12 pb-7 text-[15px] leading-relaxed text-fg-muted">
+                  <div className="max-w-2xl pr-10 pb-6 text-[14.5px] leading-[1.65] text-fg-muted">
                     {item.content}
                   </div>
                 </motion.div>

@@ -42,7 +42,7 @@ export type TerminalLine =
 const toneClass = {
   ok: "text-emerald",
   warn: "text-gold",
-  info: "text-neon-soft",
+  info: "text-accent-soft",
   muted: "text-zinc-500",
 } as const;
 
@@ -121,7 +121,7 @@ export function TypedTerminal({
         <div key={i} className="flex gap-2">
           {line.kind === "cmd" ? (
             <>
-              <span className="shrink-0 text-neon select-none">$</span>
+              <span className="shrink-0 text-accent select-none">$</span>
               <span className="text-zinc-200">{line.text}</span>
             </>
           ) : (
@@ -131,7 +131,7 @@ export function TypedTerminal({
       ))}
       {current?.kind === "cmd" && (
         <div className="flex gap-2">
-          <span className="shrink-0 text-neon select-none">$</span>
+          <span className="shrink-0 text-accent select-none">$</span>
           <span className="caret text-zinc-200">{partial}</span>
         </div>
       )}

@@ -18,7 +18,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={mounted ? `Switch to ${isDark ? "light" : "dark"} theme` : "Toggle theme"}
       data-cursor="hover"
       className={cn(
-        "relative grid h-9 w-9 place-items-center rounded-full border border-line bg-surface text-fg-muted transition-colors hover:border-line-strong hover:text-fg",
+        "relative grid h-9 w-9 place-items-center rounded-md border border-line bg-surface text-fg-muted transition-colors hover:border-line-strong hover:text-fg",
         className,
       )}
     >

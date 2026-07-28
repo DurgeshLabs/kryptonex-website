@@ -1,57 +1,41 @@
 import { Hero } from "@/components/sections/Hero";
-import { TopicsBand } from "@/components/sections/TopicsBand";
-import { About } from "@/components/sections/About";
-import { Mission } from "@/components/sections/Mission";
-import { WhyJoin } from "@/components/sections/WhyJoin";
-import { Roadmap } from "@/components/sections/Roadmap";
-import { Events } from "@/components/sections/Events";
-import { DigitalFortress } from "@/components/sections/DigitalFortress";
-import { CtfJourney } from "@/components/sections/CtfJourney";
-import { Stats } from "@/components/sections/Stats";
-import { Gallery } from "@/components/sections/Gallery";
-import { Team } from "@/components/sections/Team";
+import { LiveAnnouncements } from "@/components/sections/LiveAnnouncements";
+import { UpcomingEvents } from "@/components/sections/UpcomingEvents";
+import { WhyKryptonex } from "@/components/sections/WhyKryptonex";
+import { MissionVision } from "@/components/sections/MissionVision";
+import { LearningPath } from "@/components/sections/LearningPath";
+import { SemesterRoadmap } from "@/components/sections/SemesterRoadmap";
+import { CommunityNumbers } from "@/components/sections/CommunityNumbers";
+import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
+import { HallOfFame } from "@/components/sections/HallOfFame";
+import { GallerySection } from "@/components/sections/GallerySection";
+import { ResourceLibrary } from "@/components/sections/ResourceLibrary";
+import { Partners } from "@/components/sections/Partners";
+import { LeadershipTeam } from "@/components/sections/LeadershipTeam";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Faq } from "@/components/sections/Faq";
-import { Recruitment } from "@/components/sections/Recruitment";
-import { Contact } from "@/components/sections/Contact";
-import { faqs } from "@/data";
-import { site } from "@/lib/site";
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.question,
-    acceptedAnswer: { "@type": "Answer", text: f.answer },
-  })),
-};
+import { Newsletter } from "@/components/sections/Newsletter";
+import { JoinCta } from "@/components/sections/JoinCta";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <TopicsBand />
-      <About />
-      <Mission />
-      <WhyJoin />
-      <Roadmap />
-      <Events />
-      <DigitalFortress />
-      <CtfJourney />
-      <Stats />
-      <Gallery />
-      <Team />
+      <LiveAnnouncements />
+      <UpcomingEvents />
+      <WhyKryptonex />
+      <MissionVision />
+      <LearningPath />
+      <SemesterRoadmap />
+      <CommunityNumbers />
+      <FeaturedProjects />
+      <HallOfFame />
+      <GallerySection />
+      <ResourceLibrary />
+      <Partners />
+      <LeadershipTeam />
       <Testimonials />
-      <Faq />
-      <Recruitment />
-      <Contact />
-      <script
-        type="application/ld+json"
-        // Built from the local FAQ data file — no user input reaches this string.
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <span className="sr-only">{site.tagline}</span>
+      <Newsletter />
+      <JoinCta />
     </>
   );
 }

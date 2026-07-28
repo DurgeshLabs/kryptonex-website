@@ -4,12 +4,12 @@
 
 # Kryptonex
 
-**Break it. Understand it. Defend it.**
+**Build. Learn. Innovate. Lead.**
 
-The official website for **Kryptonex** — the cybersecurity & Capture-the-Flag community at the
-School of Technology and Research, Dnyaan Prasad Global University (DPGU), Pune.
+The official website for **Kryptonex** — the student innovation community at the School of
+Technology and Research, Dnyaan Prasad Global University (DPGU), Pune.
 
-<sub>Next.js 15 · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · GSAP · Lucide</sub>
+<sub>Next.js 15 · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · Lucide</sub>
 
 </div>
 
@@ -17,13 +17,14 @@ School of Technology and Research, Dnyaan Prasad Global University (DPGU), Pune.
 
 ## What this is
 
-Kryptonex began as STR's first Tech & Innovation Club and has narrowed to one ownable mission:
-cybersecurity, ethical hacking and CTF. This site is the club's public front door — the learning
-ladder, the season calendar, the council, the flagship **Digital Fortress** inter-college CTF, and
-the recruitment funnel.
+Kryptonex is the student community where builders become founders, cybersecurity professionals,
+AI engineers and innovators. This site is its public front door — announcements, the event
+calendar, the learning path, member projects, the resource library, the council and recruitment.
 
-Everything the site displays is **data-driven**: the stats band, command palette, timeline, roster
-and FAQ all derive from JSON files in `src/data`. Update the data, and the whole site updates.
+A multi-page Next.js application with twelve routes and a nineteen-section landing page.
+Everything it displays is **data-driven**: the stats band, command palette, event timeline,
+roster, projects and resources all derive from JSON files in `src/data`. Update the data, and the
+whole site updates.
 
 ## Quick start
 
@@ -44,26 +45,35 @@ Then open <http://localhost:3000>.
 | `npm run lint`      | ESLint (`next/core-web-vitals` + `next/typescript`) |
 | `npm run typecheck` | `tsc --noEmit`                                      |
 
+## Routes
+
+| Route            | What it is                                                |
+| ---------------- | --------------------------------------------------------- |
+| `/`              | Landing page — 19 sections, hero through join CTA          |
+| `/about`         | Story, mission and vision, learning path, numbers          |
+| `/events`        | Full calendar, filterable by time, type and keyword        |
+| `/announcements` | Everything currently open                                  |
+| `/gallery`       | Filterable masonry grid with a lightbox                    |
+| `/resources`     | The resource library by category                           |
+| `/projects`      | What members have built                                    |
+| `/hall-of-fame`  | Recognition categories and criteria                        |
+| `/team`          | Leadership plus the searchable full roster                 |
+| `/blog`          | Writeups and field notes                                   |
+| `/join`          | The recruitment process and track selection                |
+| `/contact`       | Enquiries, sponsorship and speaking                        |
+
 ## Project structure
 
 ```
 src/
-├── app/
-│   ├── layout.tsx          # Fonts, metadata, JSON-LD, global shell
-│   ├── page.tsx            # Section composition + FAQPage schema
-│   ├── not-found.tsx       # Terminal-styled 404
-│   ├── robots.ts           # robots.txt (static)
-│   ├── sitemap.ts          # sitemap.xml (static)
-│   └── globals.css         # Design tokens, utilities, keyframes
+├── app/                    # One directory per route + layout, sitemap, robots, 404
 ├── components/
-│   ├── layout/             # Navbar, Footer, FloatingDock, CommandPalette, Shell, ThemeToggle
-│   ├── sections/           # The 15 page sections + TopicsBand
-│   ├── ui/                 # Button, LinkButton, Card, TiltCard, Badge, Section, Accordion,
-│   │                       # AnimatedText, Counter, Terminal
-│   └── fx/                 # CustomCursor, Globe, NeuralField, Backgrounds (grid/blobs/code rain),
-│                           # LoadingScreen, ScrollProgress, PageTransition
-├── data/                   # events · team · roadmap · ctf-journey · faq · testimonials · gallery
-├── lib/                    # site config, hooks, utils
+│   ├── layout/             # Navbar, AnnouncementBar, Footer, CommandPalette, Shell, ThemeToggle
+│   ├── sections/           # Landing sections and the shared explorers (events, team, gallery)
+│   ├── ui/                 # Button, LinkButton, Card, Badge, Section, Accordion, Counter, …
+│   └── fx/                 # PageBackdrop, NeuralField, ScrollProgress
+├── data/                   # All content as JSON
+├── lib/                    # site config + navigation, hooks, utils
 └── types/                  # Shared domain types
 ```
 
@@ -71,15 +81,22 @@ src/
 
 All content lives in `src/data`. No component changes are needed for routine updates.
 
-| File                | Drives                                              |
-| ------------------- | --------------------------------------------------- |
-| `events.json`       | Events timeline, filters, stats, command palette     |
-| `team.json`         | Council grid, team filters, search, member count     |
-| `roadmap.json`      | The 12-track learning ladder and the topics band     |
-| `ctf-journey.json`  | The six-stage CTF progression                        |
-| `faq.json`          | FAQ accordion **and** the `FAQPage` structured data   |
-| `testimonials.json` | The auto-advancing quote carousel                    |
-| `gallery.json`      | Gallery tiles and the lightbox                       |
+| File                    | Drives                                              |
+| ----------------------- | --------------------------------------------------- |
+| `announcements.json`    | Sticky ticker, announcements section and page        |
+| `events.json`           | Landing timeline, `/events` explorer, palette        |
+| `domains.json`          | Hero track pills, `/join` track picker, palette      |
+| `learning-path.json`    | The eight-stage learning journey                     |
+| `semester-roadmap.json` | The month-by-month semester plan                     |
+| `community-stats.json`  | The animated counters                                |
+| `projects.json`         | Featured projects and `/projects`                    |
+| `hall-of-fame.json`     | Recognition categories and criteria                  |
+| `resources.json`        | The resource library                                 |
+| `partners.json`         | The partner marquee                                  |
+| `team.json`             | Leadership grid and the searchable roster            |
+| `gallery.json`          | Gallery tiles and the lightbox                       |
+| `testimonials.json`     | The auto-advancing quote carousel                    |
+| `blog.json`             | The blog index                                       |
 
 ### Placeholders to replace
 
@@ -89,43 +106,52 @@ A few things are deliberately marked as placeholders rather than invented:
    pre-filled email to the council. Set `NEXT_PUBLIC_RECRUITMENT_URL`, or edit the value, once the
    real form URL exists.
 2. **Social links** — the LinkedIn / Instagram / Discord / GitHub URLs in `src/lib/site.ts` are
-   placeholders. Point them at the club's real handles.
-3. **Gallery** — tiles render generated artwork, not photographs. As the season is documented,
-   replace `Plate` in `src/components/sections/Gallery.tsx` with `next/image` tiles and add the
-   image paths to `gallery.json`.
+   placeholders. Point them at the community's real handles.
+3. **Gallery** — tiles render generated artwork, not photographs. As each event is documented,
+   replace `GalleryPlate` in `src/components/ui/GalleryPlate.tsx` with `next/image` tiles and add
+   the image paths to `gallery.json`.
 4. **Testimonials** — seeded with the council's own statements about the programme, attributed as
-   such rather than as personal quotes. Swap in real member quotes after the first full season.
-
-The learning ladder's twelve topics are derived from the club brief (Linux → networking → web →
-forensics → malware, plus the workshop calendar); adjust freely in `roadmap.json`.
+   such rather than as personal quotes. Swap in real member, alumni and faculty quotes once the
+   first full season is documented.
+5. **Community numbers** — `community-stats.json` carries the figures supplied by the council
+   (250+ members, 18 events, and so on). Verify them before launch; they are the site's most
+   quotable claims.
+6. **Partners** — `partners.json` lists the organisations named by the council. Confirm each
+   relationship before publishing, and add logo assets when they are available.
+7. **Projects** — `repo` and `demo` are optional on every project. Cards show "Repo on release"
+   until a link is added, so nothing points at a dead URL.
+8. **Newsletter** — the form composes an email to the council rather than posting to an endpoint,
+   because the site is a static export. Swap in a real form action when one exists.
+9. **Team socials** — the leadership cards show inert social icons. Add per-member handles to
+   `team.json` and wire them up in `LeadershipTeam.tsx` when they're collected.
 
 ## Design system
 
-Dark is the canonical theme; light is fully supported and persists across visits.
+Dark is the canonical theme; light is fully supported and persists across visits. The palette is
+deliberately restrained — one accent that carries meaning, with the university's brand colours
+reserved for identity moments.
 
-| Token       | Dark                    | Role                                         |
-| ----------- | ----------------------- | -------------------------------------------- |
-| `--bg`      | `#050505`               | Page background                              |
-| `--surface` | `#101010`               | Cards and panels                             |
-| `--border`  | `rgba(255,255,255,.08)` | Hairlines                                    |
-| `--neon`    | `#3d8bff`               | Primary accent — interactive, glow            |
-| `--violet`  | `#8b5cf6`               | Secondary accent — gradients                  |
-| `--emerald` | `#22c55e`               | Success and defensive tracks                  |
-| `--gold`    | `#d1a550`               | DPGU Sand Brown — Digital Fortress, flagship  |
-| `--crimson` | `#e0453f`               | DPGU Red Brown — identity, offensive tracks   |
+| Token       | Dark                    | Role                                        |
+| ----------- | ----------------------- | ------------------------------------------- |
+| `--bg`      | `#050505`               | Page background                             |
+| `--surface` | `#101012`               | Cards and panels                            |
+| `--border`  | `rgba(255,255,255,.08)` | Hairlines                                   |
+| `--accent`  | `#4d8dff`               | The single primary accent                   |
+| `--emerald` | `#34c76a`               | Live / open status                          |
+| `--gold`    | `#d1a550`               | DPGU Sand Brown — flagship events           |
+| `--crimson` | `#d94b45`               | DPGU Red Brown — identity                   |
 
-Gold and crimson are the university's official brand colours (`#d1a550` / `#b22b2f` from the STR
-Brand & Identity Guidelines, lifted for legibility on dark surfaces). Typography is **Inter**, also
-per the brand guidelines, with **JetBrains Mono** reserved for terminal, code and metadata. The
-DPGU lockup always renders on a white plate, as the guidelines require.
+Gold and crimson come from the STR Brand & Identity Guidelines (`#d1a550` / `#b22b2f`, lifted for
+legibility on dark surfaces). Typography is **Inter**, also per the brand guidelines, with
+**JetBrains Mono** reserved for metadata, code and eyebrow labels. The DPGU lockup always renders
+on a white plate, as the guidelines require.
 
 ## Accessibility & performance
 
-- Every animation respects `prefers-reduced-motion` — canvases unmount entirely, the boot screen
-  is skipped, and transitions collapse.
-- The custom cursor only mounts on fine-pointer devices, and hides the native cursor only while it
-  is actually active.
-- Canvas effects pause via `IntersectionObserver` when off-screen and cap DPR at 2.
+- Every animation respects `prefers-reduced-motion` — canvases unmount entirely and transitions
+  collapse.
+- The native cursor is used throughout; there is no custom cursor layer.
+- The hero's particle canvas pauses via `IntersectionObserver` when off-screen and caps DPR at 2.
 - Skip-to-content link, focus-visible rings, semantic landmarks, `aria-*` on all interactive
   controls, and an `sr-only` copy of every animated heading.
 - Static export, fonts self-hosted via `next/font`, no runtime image optimisation needed.
@@ -172,9 +198,9 @@ Leave `NEXT_PUBLIC_BASE_PATH` unset when serving from a domain root.
 
 ## Ethics
 
-Everything Kryptonex teaches happens inside sanctioned labs, CTF ranges, or a bug bounty
-programme's published scope and safe-harbour terms. Testing systems without permission is not part
-of this club.
+The security track happens inside sanctioned labs, CTF ranges, or a bug bounty programme's
+published scope and safe-harbour terms. Testing systems without permission is not part of this
+community.
 
 ---
 

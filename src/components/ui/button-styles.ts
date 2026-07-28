@@ -1,20 +1,20 @@
-export type ButtonVariant = "primary" | "secondary" | "ghost" | "gold";
+export type ButtonVariant = "primary" | "secondary" | "ghost" | "inverse";
 export type ButtonSize = "sm" | "md" | "lg";
 
 export const buttonVariants: Record<ButtonVariant, string> = {
   primary:
-    "text-white bg-[linear-gradient(120deg,var(--neon),var(--violet))] shadow-[0_10px_40px_-12px_color-mix(in_oklab,var(--neon)_70%,transparent)] hover:shadow-[0_16px_50px_-10px_color-mix(in_oklab,var(--neon)_85%,transparent)]",
+    "bg-accent text-white hover:brightness-110 active:brightness-95 border border-transparent",
   secondary:
-    "text-fg bg-surface border border-line-strong hover:border-[color-mix(in_oklab,var(--neon)_45%,transparent)] hover:bg-surface-2",
-  ghost: "text-fg-muted hover:text-fg hover:bg-surface",
-  gold: "text-[#1a1206] bg-[linear-gradient(120deg,var(--gold-soft),var(--gold))] shadow-[0_10px_40px_-14px_color-mix(in_oklab,var(--gold)_80%,transparent)]",
+    "bg-transparent text-fg border border-line-strong hover:bg-surface hover:border-fg-subtle",
+  ghost: "bg-transparent text-fg-muted border border-transparent hover:text-fg hover:bg-surface",
+  inverse: "bg-fg text-bg border border-transparent hover:opacity-90",
 };
 
 export const buttonSizes: Record<ButtonSize, string> = {
-  sm: "h-9 px-4 text-[13px] rounded-lg gap-1.5",
-  md: "h-11 px-5 text-sm rounded-xl gap-2",
-  lg: "h-[52px] px-7 text-[15px] rounded-xl gap-2.5",
+  sm: "h-9 px-3.5 text-[13px] rounded-md gap-1.5",
+  md: "h-10 px-4 text-[13.5px] rounded-md gap-2",
+  lg: "h-12 px-6 text-[14.5px] rounded-md gap-2",
 };
 
 export const buttonBase =
-  "relative isolate inline-flex select-none items-center justify-center overflow-hidden font-medium tracking-[-0.01em] transition-all duration-200";
+  "relative inline-flex select-none items-center justify-center font-medium tracking-[-0.005em] transition-[background,border-color,color,opacity,filter] duration-200 disabled:pointer-events-none disabled:opacity-45";

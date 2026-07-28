@@ -1,32 +1,39 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  ArrowRight,
+  BookOpen,
   CalendarDays,
-  Flag,
-  Home,
-  Info,
+  FileText,
+  FolderGit2,
+  Layers,
   Laptop,
   Mail,
-  MessageSquareQuote,
+  Megaphone,
   Moon,
-  Route,
   Search,
-  ShieldQuestion,
-  Sparkles,
   Sun,
   Trophy,
   Users,
 } from "lucide-react";
 import { useTheme } from "next-themes";
-import { events, roadmap, team } from "@/data";
-import { site } from "@/lib/site";
-import { useLockBodyScroll, useScrollToId } from "@/lib/hooks";
+import {
+  announcements,
+  blogPosts,
+  domains,
+  events,
+  hallOfFame,
+  projects,
+  resources,
+  team,
+} from "@/data";
+import { routes, site } from "@/lib/site";
+import { useLockBodyScroll } from "@/lib/hooks";
 import { cn, formatDate } from "@/lib/utils";
 
-type Command = {
+interface Command {
   id: string;
   label: string;
   hint?: string;
@@ -34,7 +41,7 @@ type Command = {
   icon: React.ComponentType<{ className?: string }>;
   run: () => void;
   keywords?: string;
-};
+}
 
 export function CommandPalette({
   open,
@@ -47,36 +54,30 @@ export function CommandPalette({
   const [cursor, setCursor] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
-  const scrollToId = useScrollToId();
-  const { setTheme, resolvedTheme } = useTheme();
+  const router = useRouter();
+  const { setTheme } = useTheme();
 
   useLockBodyScroll(open);
 
   const commands = useMemo<Command[]>(() => {
     const close = () => onOpenChange(false);
-    const jump = (id: string) => () => {
+    const go = (path: string) => () => {
       close();
-      window.setTimeout(() => scrollToId(id), 60);
+      router.push(path);
     };
 
-    const nav: Command[] = [
-      { id: "n-hero", label: "Home", group: "Navigate", icon: Home, run: jump("hero") },
-      { id: "n-about", label: "About Kryptonex", group: "Navigate", icon: Info, run: jump("about") },
-      { id: "n-why", label: "Why join", group: "Navigate", icon: Sparkles, run: jump("why-join") },
-      { id: "n-roadmap", label: "Learning roadmap", group: "Navigate", icon: Route, run: jump("roadmap") },
-      { id: "n-events", label: "Events calendar", group: "Navigate", icon: CalendarDays, run: jump("events") },
-      { id: "n-fortress", label: "Digital Fortress", group: "Navigate", icon: Flag, run: jump("digital-fortress") },
-      { id: "n-ctf", label: "CTF journey", group: "Navigate", icon: Trophy, run: jump("ctf-journey") },
-      { id: "n-team", label: "The council", group: "Navigate", icon: Users, run: jump("team") },
-      { id: "n-voices", label: "Voices", group: "Navigate", icon: MessageSquareQuote, run: jump("testimonials") },
-      { id: "n-faq", label: "FAQ", group: "Navigate", icon: ShieldQuestion, run: jump("faq") },
-      { id: "n-join", label: "Join Kryptonex", group: "Navigate", icon: ArrowRight, run: jump("recruitment") },
-      { id: "n-contact", label: "Contact", group: "Navigate", icon: Mail, run: jump("contact") },
-    ];
+    const pages: Command[] = routes.map((r) => ({
+      id: `page-${r.path}`,
+      label: r.label,
+      hint: r.path,
+      group: "Pages",
+      icon: Layers,
+      run: go(r.path),
+    }));
 
     const actions: Command[] = [
       {
-        id: "a-theme-dark",
+        id: "theme-dark",
         label: "Switch to dark theme",
         group: "Actions",
         icon: Moon,
@@ -84,10 +85,10 @@ export function CommandPalette({
           setTheme("dark");
           close();
         },
-        keywords: "theme appearance night",
+        keywords: "appearance night",
       },
       {
-        id: "a-theme-light",
+        id: "theme-light",
         label: "Switch to light theme",
         group: "Actions",
         icon: Sun,
@@ -95,10 +96,10 @@ export function CommandPalette({
           setTheme("light");
           close();
         },
-        keywords: "theme appearance day",
+        keywords: "appearance day",
       },
       {
-        id: "a-theme-system",
+        id: "theme-system",
         label: "Use system theme",
         group: "Actions",
         icon: Laptop,
@@ -106,10 +107,10 @@ export function CommandPalette({
           setTheme("system");
           close();
         },
-        keywords: "theme auto",
+        keywords: "appearance auto",
       },
       {
-        id: "a-email",
+        id: "email",
         label: `Email the council — ${site.email}`,
         group: "Actions",
         icon: Mail,
@@ -117,46 +118,91 @@ export function CommandPalette({
           window.location.href = `mailto:${site.email}`;
           close();
         },
-        keywords: "contact reach out mail",
+        keywords: "contact reach out",
       },
     ];
 
-    const eventCmds: Command[] = events.map((e) => ({
-      id: `e-${e.id}`,
-      label: e.name,
-      hint: `${e.type} · ${formatDate(e.date)}`,
-      group: "Events",
-      icon: e.flagship ? Flag : CalendarDays,
-      run: jump("events"),
-      keywords: `${e.type} ${e.status} ${e.summary}`,
-    }));
-
-    const trackCmds: Command[] = roadmap.map((t) => ({
-      id: `t-${t.id}`,
-      label: t.title,
-      hint: `Track ${t.index} · ${t.stage}`,
-      group: "Learning tracks",
-      icon: Route,
-      run: jump("roadmap"),
-      keywords: `${t.skills.join(" ")} ${t.tools.join(" ")}`,
-    }));
-
-    const peopleCmds: Command[] = team.map((m) => ({
-      id: `p-${m.id}`,
-      label: m.name,
-      hint: `${m.role} · ${m.team}`,
-      group: "Council",
-      icon: Users,
-      run: jump("team"),
-      keywords: `${m.role} ${m.team}`,
-    }));
-
-    return [...nav, ...actions, ...eventCmds, ...trackCmds, ...peopleCmds];
-  }, [onOpenChange, scrollToId, setTheme]);
+    return [
+      ...pages,
+      ...actions,
+      ...announcements.map((a) => ({
+        id: `ann-${a.id}`,
+        label: a.title,
+        hint: a.meta,
+        group: "Announcements",
+        icon: Megaphone,
+        run: go("/announcements"),
+        keywords: a.body,
+      })),
+      ...events.map((e) => ({
+        id: `evt-${e.id}`,
+        label: e.name,
+        hint: `${e.type} · ${formatDate(e.date)}`,
+        group: "Events",
+        icon: CalendarDays,
+        run: go("/events"),
+        keywords: `${e.domain} ${e.venue} ${e.summary}`,
+      })),
+      ...domains.map((d) => ({
+        id: `dom-${d.id}`,
+        label: d.name,
+        hint: "Domain track",
+        group: "Domains",
+        icon: Layers,
+        run: go("/about"),
+        keywords: d.topics.join(" "),
+      })),
+      ...projects.map((p) => ({
+        id: `prj-${p.id}`,
+        label: p.name,
+        hint: p.domain,
+        group: "Projects",
+        icon: FolderGit2,
+        run: go("/projects"),
+        keywords: `${p.stack.join(" ")} ${p.summary}`,
+      })),
+      ...resources.map((r) => ({
+        id: `res-${r.id}`,
+        label: r.title,
+        hint: `${r.count} resources`,
+        group: "Resources",
+        icon: BookOpen,
+        run: go("/resources"),
+        keywords: r.items.join(" "),
+      })),
+      ...hallOfFame.map((h) => ({
+        id: `hof-${h.id}`,
+        label: h.title,
+        hint: "Hall of Fame",
+        group: "Recognition",
+        icon: Trophy,
+        run: go("/hall-of-fame"),
+        keywords: h.summary,
+      })),
+      ...blogPosts.map((b) => ({
+        id: `blog-${b.id}`,
+        label: b.title,
+        hint: `${b.category} · ${b.readingTime}`,
+        group: "Blog",
+        icon: FileText,
+        run: go("/blog"),
+        keywords: b.excerpt,
+      })),
+      ...team.map((m) => ({
+        id: `mem-${m.id}`,
+        label: m.name,
+        hint: `${m.role} · ${m.team}`,
+        group: "Team",
+        icon: Users,
+        run: go("/team"),
+        keywords: `${m.role} ${m.team}`,
+      })),
+    ];
+  }, [onOpenChange, router, setTheme]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return commands.filter((c) => c.group === "Navigate" || c.group === "Actions");
+    if (!q) return commands.filter((c) => c.group === "Pages" || c.group === "Actions");
     return commands
       .filter((c) => `${c.label} ${c.hint ?? ""} ${c.keywords ?? ""}`.toLowerCase().includes(q))
       .slice(0, 40);
@@ -176,7 +222,7 @@ export function CommandPalette({
   useEffect(() => setCursor(0), [query, open]);
 
   useEffect(() => {
-    if (open) window.setTimeout(() => inputRef.current?.focus(), 40);
+    if (open) window.setTimeout(() => inputRef.current?.focus(), 30);
     else setQuery("");
   }, [open]);
 
@@ -202,9 +248,7 @@ export function CommandPalette({
   }, [open, flat, cursor, onOpenChange]);
 
   useEffect(() => {
-    listRef.current
-      ?.querySelector(`[data-index="${cursor}"]`)
-      ?.scrollIntoView({ block: "nearest" });
+    listRef.current?.querySelector(`[data-index="${cursor}"]`)?.scrollIntoView({ block: "nearest" });
   }, [cursor]);
 
   let index = -1;
@@ -216,22 +260,19 @@ export function CommandPalette({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.16 }}
           className="fixed inset-0 z-[9000] no-print"
           role="dialog"
           aria-modal="true"
-          aria-label="Command palette"
+          aria-label="Search"
         >
-          <div
-            className="absolute inset-0 bg-black/55 backdrop-blur-md"
-            onClick={() => onOpenChange(false)}
-          />
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => onOpenChange(false)} />
           <motion.div
-            initial={{ opacity: 0, y: -14, scale: 0.98 }}
+            initial={{ opacity: 0, y: -10, scale: 0.99 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.985 }}
-            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mx-auto mt-[12vh] w-[min(94vw,620px)] overflow-hidden rounded-2xl border border-line-strong bg-bg-elevated shadow-[0_50px_140px_-30px_rgba(0,0,0,0.85)]"
+            exit={{ opacity: 0, y: -8, scale: 0.99 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            className="relative mx-auto mt-[10vh] w-[min(94vw,600px)] overflow-hidden rounded-xl border border-line-strong bg-bg-elevated shadow-[0_40px_120px_-30px_rgba(0,0,0,0.8)]"
           >
             <div className="flex items-center gap-3 border-b border-line px-4">
               <Search className="h-4 w-4 shrink-0 text-fg-subtle" />
@@ -239,18 +280,18 @@ export function CommandPalette({
                 ref={inputRef}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search events, tracks, people, actions…"
+                placeholder="Search pages, events, projects, resources…"
                 aria-label="Search"
-                className="h-14 w-full bg-transparent text-[15px] text-fg outline-none placeholder:text-fg-subtle"
+                className="h-13 w-full bg-transparent py-4 text-[14.5px] text-fg outline-none placeholder:text-fg-subtle"
               />
               <kbd className="hidden shrink-0 rounded border border-line px-1.5 py-0.5 font-mono text-[10px] text-fg-subtle sm:block">
                 ESC
               </kbd>
             </div>
 
-            <div ref={listRef} className="max-h-[52vh] overflow-y-auto overscroll-contain p-2">
+            <div ref={listRef} className="max-h-[50vh] overflow-y-auto overscroll-contain p-2">
               {grouped.length === 0 && (
-                <p className="px-3 py-10 text-center text-sm text-fg-subtle">
+                <p className="px-3 py-10 text-center text-[13.5px] text-fg-subtle">
                   No matches for “{query}”.
                 </p>
               )}
@@ -270,17 +311,12 @@ export function CommandPalette({
                         onMouseEnter={() => setCursor(i)}
                         onClick={cmd.run}
                         className={cn(
-                          "flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors",
+                          "flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left transition-colors",
                           i === cursor ? "bg-surface-2 text-fg" : "text-fg-muted",
                         )}
                       >
-                        <Icon
-                          className={cn(
-                            "h-4 w-4 shrink-0",
-                            i === cursor ? "text-neon" : "text-fg-subtle",
-                          )}
-                        />
-                        <span className="flex-1 truncate text-[14px]">{cmd.label}</span>
+                        <Icon className={cn("h-4 w-4 shrink-0", i === cursor ? "text-accent" : "text-fg-subtle")} />
+                        <span className="flex-1 truncate text-[13.5px]">{cmd.label}</span>
                         {cmd.hint && (
                           <span className="hidden shrink-0 font-mono text-[10.5px] text-fg-subtle sm:block">
                             {cmd.hint}
@@ -296,11 +332,9 @@ export function CommandPalette({
             <div className="flex items-center justify-between border-t border-line px-4 py-2.5 font-mono text-[10.5px] text-fg-subtle">
               <span className="flex items-center gap-3">
                 <span>↑↓ navigate</span>
-                <span>↵ select</span>
+                <span>↵ open</span>
               </span>
-              <span>
-                {resolvedTheme === "light" ? "light" : "dark"} · {results.length} results
-              </span>
+              <span>{results.length} results</span>
             </div>
           </motion.div>
         </motion.div>

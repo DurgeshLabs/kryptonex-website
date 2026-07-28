@@ -1,0 +1,50 @@
+[
+  {
+    "id": "hackathon-winners",
+    "title": "Hackathon Winners",
+    "icon": "trophy",
+    "summary": "Teams that placed at inter-college hackathons, and the projects they shipped in under a day.",
+    "criteria": "Top-three finish at an external or internal hackathon",
+    "hue": 38
+  },
+  {
+    "id": "open-source",
+    "title": "Open Source Contributors",
+    "icon": "git",
+    "summary": "Members whose pull requests were merged into public repositories maintained by someone else.",
+    "criteria": "A merged PR to a project outside Kryptonex",
+    "hue": 158
+  },
+  {
+    "id": "internships",
+    "title": "Internship Achievers",
+    "icon": "briefcase",
+    "summary": "Members who converted community work into an industry internship — and the portfolio that got them there.",
+    "criteria": "A secured internship attributable to community work",
+    "hue": 214
+  },
+  {
+    "id": "research",
+    "title": "Research Papers",
+    "icon": "file",
+    "summary": "Published or accepted work, from conference papers to security disclosures and technical writeups.",
+    "criteria": "A published paper, disclosure or accepted submission",
+    "hue": 262
+  },
+  {
+    "id": "volunteers",
+    "title": "Top Volunteers",
+    "icon": "hands",
+    "summary": "The people who set up the lab, ran the registration desk, and stayed until the chairs were stacked.",
+    "criteria": "Sustained contribution across a semester of events",
+    "hue": 340
+  },
+  {
+    "id": "outstanding-member",
+    "title": "Outstanding Member",
+    "icon": "star",
+    "summary": "One member each season whose work raised the standard for everyone around them.",
+    "criteria": "Awarded once per season by the council",
+    "hue": 24
+  }
+]

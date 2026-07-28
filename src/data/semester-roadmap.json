@@ -1,0 +1,42 @@
+[
+  {
+    "id": "aug",
+    "month": "August",
+    "title": "GitHub & Open Source",
+    "summary": "Version control done properly, then a first contribution to a live repository.",
+    "highlights": ["GitHub Bootcamp", "Open Source Sprint", "Core team recruitment"],
+    "status": "current"
+  },
+  {
+    "id": "sep",
+    "month": "September",
+    "title": "Industry Month",
+    "summary": "Practitioners on campus — what the work actually looks like from inside a company.",
+    "highlights": ["Industry Meetup", "AI Build Night", "Resume clinic"],
+    "status": "planned"
+  },
+  {
+    "id": "oct",
+    "month": "October",
+    "title": "Hackathon",
+    "summary": "The season's competitive peak. Twenty-four hours, open theme, mentors on the floor.",
+    "highlights": ["Kryptonex Hackathon", "Industry Visit", "Startup Meetup"],
+    "status": "planned"
+  },
+  {
+    "id": "nov",
+    "month": "November",
+    "title": "Cybersecurity Month",
+    "summary": "A full month on the security track — labs, a CTF, and a live red-versus-blue demonstration.",
+    "highlights": ["CTF weekend", "Red vs Blue demo", "SOC walkthrough"],
+    "status": "planned"
+  },
+  {
+    "id": "dec",
+    "month": "December",
+    "title": "Flagship Event",
+    "summary": "The showcase that closes the semester — projects presented, awards given, next season announced.",
+    "highlights": ["Project showcase", "Kryptonex Awards", "Season announcement"],
+    "status": "planned"
+  }
+]

@@ -6,7 +6,9 @@
     "status": "Planning",
     "date": "2025-06-24",
     "expectedAttendees": 40,
-    "summary": "The season opener. What Kryptonex is becoming, how the security tracks work, and how to plug in from day one."
+    "summary": "The season opener. What Kryptonex is becoming, how the security tracks work, and how to plug in from day one.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "cyber-quest-beginner-ctf",
@@ -15,7 +17,9 @@
     "status": "Planning",
     "date": "2025-06-28",
     "expectedAttendees": 25,
-    "summary": "A gentle first Capture-the-Flag. Guided challenges, hints on tap, and no prior experience assumed."
+    "summary": "A gentle first Capture-the-Flag. Guided challenges, hints on tap, and no prior experience assumed.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "linux-cli-fundamentals",
@@ -24,7 +28,9 @@
     "status": "Planning",
     "date": "2025-07-08",
     "expectedAttendees": 20,
-    "summary": "The floor of the ladder. Filesystem, permissions, processes, pipes — the shell fluency every other track depends on."
+    "summary": "The floor of the ladder. Filesystem, permissions, processes, pipes — the shell fluency every other track depends on.",
+    "venue": "STR Campus",
+    "domain": "Development"
   },
   {
     "id": "day-in-life-soc",
@@ -33,7 +39,9 @@
     "status": "Idea",
     "date": "2025-07-22",
     "expectedAttendees": 30,
-    "summary": "A working SOC analyst walks through a real shift: alerts, triage, escalation, and what the job actually feels like."
+    "summary": "A working SOC analyst walks through a real shift: alerts, triage, escalation, and what the job actually feels like.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "hacker-movie-night",
@@ -42,7 +50,9 @@
     "status": "Idea",
     "date": "2025-07-29",
     "expectedAttendees": 15,
-    "summary": "Screening plus commentary. Which parts the 1983 classic got right, and which parts aged into folklore."
+    "summary": "Screening plus commentary. Which parts the 1983 classic got right, and which parts aged into folklore.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "web-security-101",
@@ -51,7 +61,9 @@
     "status": "Idea",
     "date": "2025-08-05",
     "expectedAttendees": 20,
-    "summary": "Injection, broken access control, XSS and friends — demonstrated live in a lab you can break safely."
+    "summary": "Injection, broken access control, XSS and friends — demonstrated live in a lab you can break safely.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "breaking-in-careers",
@@ -60,7 +72,9 @@
     "status": "Idea",
     "date": "2025-08-12",
     "expectedAttendees": 35,
-    "summary": "Red team, blue team, GRC, AppSec, research. What each path rewards and what the first two years look like."
+    "summary": "Red team, blue team, GRC, AppSec, research. What each path rewards and what the first two years look like.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "phishing-phrenzy",
@@ -69,7 +83,9 @@
     "status": "Idea",
     "date": "2025-08-19",
     "expectedAttendees": 20,
-    "summary": "Spot the lure. A fast, competitive game on pretexting, spoofed domains and the human layer of security."
+    "summary": "Spot the lure. A fast, competitive game on pretexting, spoofed domains and the human layer of security.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "network-wifi-basics",
@@ -78,7 +94,9 @@
     "status": "Idea",
     "date": "2025-09-16",
     "expectedAttendees": 15,
-    "summary": "Packets, protocols and captures. Reading traffic in Wireshark and understanding how wireless auth breaks."
+    "summary": "Packets, protocols and captures. Reading traffic in Wireshark and understanding how wireless auth breaks.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "threat-landscape-2026",
@@ -87,7 +105,9 @@
     "status": "Idea",
     "date": "2025-09-23",
     "expectedAttendees": 30,
-    "summary": "Where attacker economics are heading, and which defensive skills are about to be in short supply."
+    "summary": "Where attacker economics are heading, and which defensive skills are about to be in short supply.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "crypto-cipher-night",
@@ -96,7 +116,9 @@
     "status": "Idea",
     "date": "2025-09-30",
     "expectedAttendees": 20,
-    "summary": "Classical ciphers to modern misuse. Snacks, whiteboards, and a leaderboard that gets loud."
+    "summary": "Classical ciphers to modern misuse. Snacks, whiteboards, and a leaderboard that gets loud.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "digital-fortress",
@@ -106,7 +128,9 @@
     "date": "2025-10-14",
     "expectedAttendees": 50,
     "flagship": true,
-    "summary": "Our flagship. Eight hours, six categories, teams from colleges across Pune, one live scoreboard."
+    "summary": "Our flagship. Eight hours, six categories, teams from colleges across Pune, one live scoreboard.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "reverse-engineering-beginners",
@@ -115,7 +139,9 @@
     "status": "Idea",
     "date": "2025-11-04",
     "expectedAttendees": 15,
-    "summary": "From source to assembly and back. Static analysis, disassemblers, and finding the check you need to defeat."
+    "summary": "From source to assembly and back. Static analysis, disassemblers, and finding the check you need to defeat.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "ai-in-cybersecurity",
@@ -124,7 +150,9 @@
     "status": "Idea",
     "date": "2025-11-11",
     "expectedAttendees": 30,
-    "summary": "Model-assisted defence versus model-assisted attack, and where the honest limits currently sit."
+    "summary": "Model-assisted defence versus model-assisted attack, and where the honest limits currently sit.",
+    "venue": "STR Campus",
+    "domain": "Artificial Intelligence"
   },
   {
     "id": "cyber-trivia-night",
@@ -133,7 +161,9 @@
     "status": "Idea",
     "date": "2025-11-18",
     "expectedAttendees": 25,
-    "summary": "Breaches, CVEs, protocol lore and internet history. Teams of four, rapid rounds, small prizes."
+    "summary": "Breaches, CVEs, protocol lore and internet history. Teams of four, rapid rounds, small prizes.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "holiday-hack-challenge",
@@ -142,7 +172,9 @@
     "status": "Idea",
     "date": "2025-12-20",
     "expectedAttendees": 15,
-    "summary": "A remote, run-at-your-own-pace challenge set to keep the streak alive over the winter break."
+    "summary": "A remote, run-at-your-own-pace challenge set to keep the streak alive over the winter break.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "spring-kickoff-bug-bounty",
@@ -151,7 +183,9 @@
     "status": "Idea",
     "date": "2026-01-13",
     "expectedAttendees": 20,
-    "summary": "Semester reset. Scope, safe-harbour rules, recon workflow and how a bounty programme actually reads reports."
+    "summary": "Semester reset. Scope, safe-harbour rules, recon workflow and how a bounty programme actually reads reports.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "bug-bounty-zero-to-first",
@@ -160,7 +194,9 @@
     "status": "Idea",
     "date": "2026-01-20",
     "expectedAttendees": 30,
-    "summary": "A hunter walks through their first valid finding — the dead ends included."
+    "summary": "A hunter walks through their first valid finding — the dead ends included.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "lockpick-village",
@@ -169,7 +205,9 @@
     "status": "Idea",
     "date": "2026-01-27",
     "expectedAttendees": 20,
-    "summary": "Tailgating, badge cloning and pin tumblers. Security is not only a software problem."
+    "summary": "Tailgating, badge cloning and pin tumblers. Security is not only a software problem.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "cloud-security-fundamentals",
@@ -178,7 +216,9 @@
     "status": "Idea",
     "date": "2026-02-10",
     "expectedAttendees": 15,
-    "summary": "Identity, roles and the shared responsibility model — plus the misconfigurations that leak buckets."
+    "summary": "Identity, roles and the shared responsibility model — plus the misconfigurations that leak buckets.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "red-vs-blue-live",
@@ -187,7 +227,9 @@
     "status": "Idea",
     "date": "2026-02-17",
     "expectedAttendees": 35,
-    "summary": "Two practitioners, one lab range. Attack on the left screen, detection on the right, narrated in real time."
+    "summary": "Two practitioners, one lab range. Attack on the left screen, detection on the right, narrated in real time.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "spring-ctf-ice-breaker",
@@ -196,7 +238,9 @@
     "status": "Idea",
     "date": "2026-02-24",
     "expectedAttendees": 25,
-    "summary": "An internal CTF to blood new members and rotate teams before the next flagship cycle."
+    "summary": "An internal CTF to blood new members and rotate teams before the next flagship cycle.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "digital-forensics-breach",
@@ -205,7 +249,9 @@
     "status": "Idea",
     "date": "2026-03-10",
     "expectedAttendees": 15,
-    "summary": "Disk and memory artefacts, timeline reconstruction, and writing a finding someone else can act on."
+    "summary": "Disk and memory artefacts, timeline reconstruction, and writing a finding someone else can act on.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "women-in-cybersecurity",
@@ -214,7 +260,9 @@
     "status": "Idea",
     "date": "2026-03-17",
     "expectedAttendees": 30,
-    "summary": "Practitioners on entering the field, building credibility, and the networks that made a difference."
+    "summary": "Practitioners on entering the field, building credibility, and the networks that made a difference.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "privacy-vs-security-debate",
@@ -223,7 +271,9 @@
     "status": "Idea",
     "date": "2026-03-24",
     "expectedAttendees": 25,
-    "summary": "Structured debate on encryption, surveillance and lawful access. Sides assigned, not chosen."
+    "summary": "Structured debate on encryption, surveillance and lawful access. Sides assigned, not chosen.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "mobile-app-hacking",
@@ -232,7 +282,9 @@
     "status": "Idea",
     "date": "2026-04-07",
     "expectedAttendees": 15,
-    "summary": "APK teardown, insecure storage, traffic interception and certificate pinning bypasses on a test app."
+    "summary": "APK teardown, insecure storage, traffic interception and certificate pinning bypasses on a test app.",
+    "venue": "STR Campus",
+    "domain": "Cybersecurity"
   },
   {
     "id": "home-lab-build",
@@ -241,7 +293,9 @@
     "status": "Idea",
     "date": "2026-04-14",
     "expectedAttendees": 25,
-    "summary": "Cheap hardware, virtualisation, vulnerable VMs and a practice environment you actually keep using."
+    "summary": "Cheap hardware, virtualisation, vulnerable VMs and a practice environment you actually keep using.",
+    "venue": "STR Campus",
+    "domain": "Community"
   },
   {
     "id": "kryptonex-awards-night",
@@ -250,7 +304,31 @@
     "status": "Idea",
     "date": "2026-04-21",
     "expectedAttendees": 40,
-    "summary": "Project showcase, season highlights, and awards for the members who carried the year."
+    "summary": "Project showcase, season highlights, and awards for the members who carried the year.",
+    "venue": "STR Campus",
+    "domain": "Community"
+  },
+  {
+    "id": "github-bootcamp",
+    "name": "GitHub Bootcamp",
+    "type": "Workshop",
+    "status": "Confirmed",
+    "date": "2026-08-03",
+    "expectedAttendees": 60,
+    "venue": "Lab 402",
+    "domain": "Development",
+    "summary": "Git fundamentals through to pull requests, branching strategy and your first open-source contribution. Bring a laptop."
+  },
+  {
+    "id": "cybersecurity-lab-aug",
+    "name": "Cybersecurity Lab",
+    "type": "Workshop",
+    "status": "Confirmed",
+    "date": "2026-08-08",
+    "expectedAttendees": 40,
+    "venue": "Lab 402",
+    "domain": "Cybersecurity",
+    "summary": "Hands-on in a sanctioned lab — recon, web exploitation basics, and how a SOC actually triages an alert."
   },
   {
     "id": "kryptonex-kickoff-meetup",
@@ -259,6 +337,98 @@
     "status": "Planning",
     "date": "2026-08-20",
     "expectedAttendees": 60,
-    "summary": "New academic year, new intake. Meet the council, see the tracks, and pick where you want to start."
+    "summary": "New academic year, new intake. Meet the council, see the tracks, and pick where you want to start.",
+    "venue": "STR Campus",
+    "domain": "Community"
+  },
+  {
+    "id": "open-source-sprint",
+    "name": "Open Source Sprint",
+    "type": "Competition",
+    "status": "Planning",
+    "date": "2026-08-22",
+    "expectedAttendees": 45,
+    "venue": "Seminar Hall",
+    "domain": "Development",
+    "summary": "A full day pointed at live repositories. Find an issue, read the codebase, open a pull request that gets merged."
+  },
+  {
+    "id": "kryptonex-hackathon",
+    "name": "Kryptonex Hackathon",
+    "type": "Hackathon",
+    "status": "Confirmed",
+    "date": "2026-09-12",
+    "expectedAttendees": 120,
+    "venue": "STR Campus",
+    "domain": "Development",
+    "flagship": true,
+    "summary": "Twenty-four hours, open theme, teams of four, mentors on the floor from every domain track. ₹25,000 prize pool."
+  },
+  {
+    "id": "ai-build-night",
+    "name": "AI Build Night",
+    "type": "Workshop",
+    "status": "Planning",
+    "date": "2026-09-26",
+    "expectedAttendees": 50,
+    "venue": "Lab 402",
+    "domain": "Artificial Intelligence",
+    "summary": "One evening, one working agent. Tool use, retrieval and evaluation — built end to end rather than demoed."
+  },
+  {
+    "id": "industry-visit-oct",
+    "name": "Industry Visit",
+    "type": "Visit",
+    "status": "Planning",
+    "date": "2026-10-10",
+    "expectedAttendees": 40,
+    "venue": "Off campus",
+    "domain": "Community",
+    "summary": "A day inside a working engineering organisation — the floor, the tooling, and an honest Q&A with the team."
+  },
+  {
+    "id": "startup-meetup",
+    "name": "Startup Meetup",
+    "type": "Meetup",
+    "status": "Planning",
+    "date": "2026-10-24",
+    "expectedAttendees": 70,
+    "venue": "Seminar Hall",
+    "domain": "Entrepreneurship",
+    "summary": "Founders who started while still on campus, on fundraising, first hires, and what they would do differently."
+  },
+  {
+    "id": "ctf-weekend-nov",
+    "name": "CTF Weekend",
+    "type": "Competition",
+    "status": "Planning",
+    "date": "2026-11-14",
+    "expectedAttendees": 80,
+    "venue": "Lab 402",
+    "domain": "Cybersecurity",
+    "summary": "Cybersecurity Month's centrepiece — six categories, a live scoreboard, and writeups published afterwards."
+  },
+  {
+    "id": "red-vs-blue-nov",
+    "name": "Red Team vs Blue Team: Live Demo",
+    "type": "Guest Talk",
+    "status": "Planning",
+    "date": "2026-11-21",
+    "expectedAttendees": 60,
+    "venue": "Seminar Hall",
+    "domain": "Cybersecurity",
+    "summary": "Two practitioners, one lab range. Attack on the left screen, detection on the right, narrated in real time."
+  },
+  {
+    "id": "flagship-showcase-dec",
+    "name": "Kryptonex Showcase & Awards",
+    "type": "Social",
+    "status": "Planning",
+    "date": "2026-12-12",
+    "expectedAttendees": 150,
+    "venue": "Auditorium",
+    "domain": "Community",
+    "flagship": true,
+    "summary": "The semester's closing event — projects presented, season highlights, awards, and next season announced."
   }
 ]

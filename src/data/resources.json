@@ -1,0 +1,100 @@
+[
+  {
+    "id": "github",
+    "title": "Git & GitHub",
+    "icon": "git",
+    "summary": "From your first commit to reviewing someone else's pull request without breaking their branch.",
+    "items": [
+      "Git fundamentals cheat sheet",
+      "Branching strategy explained",
+      "Writing a pull request people will merge",
+      "Open source contribution checklist"
+    ],
+    "count": 4,
+    "hue": 158
+  },
+  {
+    "id": "cybersecurity",
+    "title": "Cybersecurity",
+    "icon": "shield",
+    "summary": "Lab setup, CTF starter material, and the ethics rules that come before any of it.",
+    "items": [
+      "Home lab setup guide",
+      "CTF beginner's handbook",
+      "OWASP Top 10 field notes",
+      "Responsible disclosure primer"
+    ],
+    "count": 4,
+    "hue": 214
+  },
+  {
+    "id": "ai",
+    "title": "Artificial Intelligence",
+    "icon": "brain",
+    "summary": "Working with models honestly — what they're good at, where they fail, and how to evaluate them.",
+    "items": [
+      "LLM fundamentals",
+      "Building your first agent",
+      "Prompt engineering reference",
+      "Evaluating model output"
+    ],
+    "count": 4,
+    "hue": 262
+  },
+  {
+    "id": "dsa",
+    "title": "DSA & Problem Solving",
+    "icon": "code",
+    "summary": "The pattern library that makes interview questions feel familiar instead of novel.",
+    "items": [
+      "Pattern-based DSA roadmap",
+      "Complexity analysis refresher",
+      "Curated problem set",
+      "Contest preparation guide"
+    ],
+    "count": 4,
+    "hue": 190
+  },
+  {
+    "id": "resume",
+    "title": "Resume & Portfolio",
+    "icon": "file",
+    "summary": "How to describe work you actually did so a recruiter can tell in eight seconds.",
+    "items": [
+      "One-page resume template",
+      "Writing project bullets that land",
+      "Portfolio site checklist",
+      "LinkedIn profile audit"
+    ],
+    "count": 4,
+    "hue": 32
+  },
+  {
+    "id": "interview",
+    "title": "Interview Preparation",
+    "icon": "message",
+    "summary": "Technical rounds, system design basics, and the behavioural questions everyone underprepares for.",
+    "items": [
+      "Technical interview playbook",
+      "System design starter",
+      "Behavioural question bank",
+      "Mock interview format"
+    ],
+    "count": 4,
+    "hue": 340
+  },
+  {
+    "id": "open-source",
+    "title": "Open Source",
+    "icon": "globe",
+    "summary": "Finding a project worth your time, and contributing in a way maintainers welcome.",
+    "items": [
+      "Finding your first issue",
+      "Reading an unfamiliar codebase",
+      "Contribution etiquette",
+      "Maintaining your own project"
+    ],
+    "count": 4,
+    "hue": 24
+  }
+]

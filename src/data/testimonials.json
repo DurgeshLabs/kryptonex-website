@@ -1,9 +1,9 @@
 [
   {
-    "id": "voice-mission",
-    "quote": "Instead of being number fifty at everything, we decided to be number one at one thing. Every session, every CTF and every guest talk this year points at the same target.",
+    "id": "voice-gap",
+    "quote": "College teaches you subjects. It does not teach you to ship something another person depends on. That gap is the entire reason this community exists.",
     "attribution": "Kryptonex Council",
-    "context": "On the new direction"
+    "context": "On why we exist"
   },
   {
     "id": "voice-zero",
@@ -12,22 +12,22 @@
     "context": "On open recruitment"
   },
   {
-    "id": "voice-ladder",
-    "quote": "Twelve topics, in sequence, starting at the command line. No jumping straight to the exciting part, because the exciting part only makes sense once the boring part is automatic.",
+    "id": "voice-tracks",
+    "quote": "Five tracks, taught in sequence, starting from the beginning. No jumping straight to the exciting part, because the exciting part only makes sense once the boring part is automatic.",
     "attribution": "Technical Team",
-    "context": "On the learning ladder"
+    "context": "On the learning path"
   },
   {
     "id": "voice-industry",
-    "quote": "We bring in people who do this for a living — SOC analysts, bounty hunters, red teamers — so members hear how the field actually works rather than how a syllabus says it works.",
+    "quote": "We bring in people who do this for a living, so members hear how the field actually works rather than how a syllabus says it works.",
     "attribution": "Events Team",
     "context": "On industry sessions"
   },
   {
-    "id": "voice-fortress",
-    "quote": "Eight hours, six categories, colleges from across Pune on one scoreboard. Digital Fortress is the thing we want this club to be known for outside our own campus.",
-    "attribution": "Kryptonex Council",
-    "context": "On Digital Fortress"
+    "id": "voice-build",
+    "quote": "Every member should finish their first season with a repository someone else could clone, read and run. That artefact is worth more than any certificate we could print.",
+    "attribution": "Technical Team",
+    "context": "On building in public"
   },
   {
     "id": "voice-ethics",
@@ -36,15 +36,15 @@
     "context": "On ethical grounding"
   },
   {
-    "id": "voice-roots",
-    "quote": "We are not leaving our roots. GitSetGo, Tech Rush and the industry visits built the foundation — we are stacking a serious security community on top of it.",
-    "attribution": "Kryptonex Council",
-    "context": "On the club's evolution"
-  },
-  {
     "id": "voice-documentation",
-    "quote": "A photographer at every event, a writeup after every CTF. Six months of documentation is the difference between a club that happened and a club people remember.",
+    "quote": "A photographer at every event, a writeup after every competition. Documentation is the difference between a club that happened and a club people remember.",
     "attribution": "Documentation Team",
     "context": "On building a record"
+  },
+  {
+    "id": "voice-leadership",
+    "quote": "The measure of this community is not what the current council builds. It is whether the people we hand it to make it better than we did.",
+    "attribution": "Kryptonex Council",
+    "context": "On succession"
   }
 ]

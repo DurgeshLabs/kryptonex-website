@@ -1,0 +1,56 @@
+[
+  {
+    "id": "campus-app",
+    "name": "Campus App",
+    "domain": "Development",
+    "summary": "A single app for timetables, notices, room availability and event registration — replacing four noticeboards and a WhatsApp group.",
+    "stack": ["React Native", "Node.js", "PostgreSQL"],
+    "status": "In development",
+    "featured": true
+  },
+  {
+    "id": "attendance-system",
+    "name": "Attendance System",
+    "domain": "Development",
+    "summary": "QR and geofence-backed attendance with a faculty dashboard, built to survive a lecture hall of two hundred students.",
+    "stack": ["Next.js", "Supabase", "Tailwind"],
+    "status": "In development",
+    "featured": true
+  },
+  {
+    "id": "ai-resume-builder",
+    "name": "AI Resume Builder",
+    "domain": "Artificial Intelligence",
+    "summary": "Turns a project history into a targeted, ATS-readable resume — and explains every edit it makes rather than rewriting silently.",
+    "stack": ["Python", "FastAPI", "LLM APIs"],
+    "status": "In development",
+    "featured": true
+  },
+  {
+    "id": "portfolio-generator",
+    "name": "Portfolio Generator",
+    "domain": "Design",
+    "summary": "Point it at a GitHub profile and it produces a deployable portfolio site with real project pages, not a template with placeholder text.",
+    "stack": ["Next.js", "GitHub API", "Vercel"],
+    "status": "In development",
+    "featured": true
+  },
+  {
+    "id": "malware-detector",
+    "name": "Malware Detector",
+    "domain": "Cybersecurity",
+    "summary": "Static and behavioural triage of suspicious binaries in an isolated sandbox, producing an indicator report a human can act on.",
+    "stack": ["Python", "YARA", "Docker"],
+    "status": "In development",
+    "featured": true
+  },
+  {
+    "id": "expense-tracker",
+    "name": "Expense Tracker",
+    "domain": "Development",
+    "summary": "Shared expense tracking for hostel floors and event budgets, with settlement maths that actually closes to zero.",
+    "stack": ["React", "Express", "MongoDB"],
+    "status": "In development",
+    "featured": true
+  }
+]

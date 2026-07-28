@@ -1,171 +1,126 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, CalendarDays, ChevronDown, Terminal } from "lucide-react";
-import { AnimatedText } from "@/components/ui/AnimatedText";
-import { Eyebrow } from "@/components/ui/Badge";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, CalendarDays } from "lucide-react";
+import { RevealLines } from "@/components/ui/AnimatedText";
 import { LinkButton } from "@/components/ui/LinkButton";
-import { Globe } from "@/components/fx/Globe";
 import { NeuralField } from "@/components/fx/NeuralField";
-import { CodeRain } from "@/components/fx/Backgrounds";
-import { stats } from "@/data";
+import { communityStats, derived, domains } from "@/data";
 import { site } from "@/lib/site";
 
-/** Positioned in the right-hand gutter only, so they never collide with the headline column. */
-const FLOATING_SNIPPETS = [
-  { code: "nmap -sV -T4 target", top: "17%", right: "26%", delay: 0 },
-  { code: "' OR 1=1 --", top: "31%", right: "6%", delay: 0.6 },
-  { code: "checksec ./fortress", top: "52%", right: "20%", delay: 1.2 },
-  { code: "flag{str_dpgu_2026}", bottom: "19%", right: "8%", delay: 1.8 },
-  { code: "volatility -f mem.raw", bottom: "31%", right: "30%", delay: 2.4 },
-];
+const WORDS = ["Build", "Learn", "Innovate", "Lead"];
 
 export function Hero() {
-  const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, 130]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
-  const globeY = useTransform(scrollYProgress, [0, 1], [0, -90]);
-  const globeScale = useTransform(scrollYProgress, [0, 1], [1, 1.14]);
+  const members = communityStats.find((s) => s.id === "members");
 
   return (
     <section
-      ref={ref}
       id="hero"
-      className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden pt-28 pb-28 sm:pt-32 sm:pb-20"
+      className="relative isolate flex min-h-[92svh] items-center overflow-hidden pt-36 pb-20 sm:pt-40"
     >
-      {/* Layered background: neural field, code rain, globe */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <NeuralField className="opacity-70" />
-        <CodeRain className="opacity-[0.16] mask-fade-b" density={0.35} />
-        <div className="scanlines absolute inset-0 opacity-40" />
+        <NeuralField className="opacity-45" count={48} linkDistance={128} />
       </div>
 
-      <motion.div
-        aria-hidden={false}
-        style={reduce ? undefined : { y: globeY, scale: globeScale }}
-        className="pointer-events-none absolute top-1/2 right-[-16%] -z-10 hidden h-[720px] w-[720px] -translate-y-1/2 opacity-80 lg:block xl:right-[-4%]"
-      >
-        <div className="pointer-events-auto h-full w-full">
-          <Globe />
-        </div>
-      </motion.div>
-
-      {/* Floating code snippets */}
-      {!reduce && (
-        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 hidden lg:block">
-          {FLOATING_SNIPPETS.map((s, i) => (
-            <motion.span
-              key={s.code}
-              initial={{ opacity: 0, y: 16 }}
+      <div className="container-page">
+        <div className="grid items-end gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 + i * 0.16, duration: 0.9 }}
-              style={{ top: s.top, right: s.right, bottom: s.bottom }}
-              className="absolute"
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-3"
             >
-              <span
-                className="animate-float inline-block rounded-lg border border-line bg-surface/50 px-2.5 py-1.5 font-mono text-[11px] text-fg-subtle backdrop-blur-sm"
-                style={{ animationDelay: `${s.delay}s` }}
-              >
-                {s.code}
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald opacity-70" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald" />
               </span>
-            </motion.span>
-          ))}
+              <p className="font-mono text-[11px] tracking-[0.16em] text-fg-subtle uppercase">
+                Recruitment open · {site.parent}
+              </p>
+            </motion.div>
+
+            <h1 className="mt-8 text-[clamp(3rem,9vw,6.5rem)] leading-[0.92] font-semibold tracking-[-0.05em] text-fg">
+              <RevealLines lines={WORDS} delay={0.1} stagger={0.08} />
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-9 max-w-lg text-[16.5px] leading-[1.6] text-fg-muted sm:text-[18px]"
+            >
+              {site.promise}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.62, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-10 flex flex-wrap items-center gap-3"
+            >
+              <LinkButton href="/join" size="lg">
+                Join Kryptonex
+                <ArrowRight className="h-4 w-4" />
+              </LinkButton>
+              <LinkButton href="/events" variant="secondary" size="lg">
+                <CalendarDays className="h-4 w-4" />
+                Upcoming events
+              </LinkButton>
+            </motion.div>
+          </div>
+
+          {/* Facts rail */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:pb-2"
+          >
+            <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-[var(--border)] sm:grid-cols-4 lg:grid-cols-2">
+              {[
+                { k: `${members?.value ?? 250}+`, v: "Members" },
+                { k: String(derived.domains), v: "Domain tracks" },
+                { k: String(derived.plannedEvents), v: "Events on calendar" },
+                { k: String(derived.councilSize), v: "Council members" },
+              ].map((item) => (
+                <div key={item.v} className="bg-bg px-4 py-5">
+                  <dt className="text-[clamp(1.5rem,2.6vw,2rem)] leading-none font-semibold tracking-[-0.04em] text-fg tabular-nums">
+                    {item.k}
+                  </dt>
+                  <dd className="mt-2 font-mono text-[10px] tracking-[0.14em] text-fg-subtle uppercase">
+                    {item.v}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {domains.map((d) => (
+                <span
+                  key={d.id}
+                  className="rounded border border-line px-2 py-1 font-mono text-[10.5px] tracking-[0.08em] text-fg-subtle uppercase"
+                >
+                  {d.name}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
-      )}
+      </div>
 
-      <motion.div
-        style={reduce ? undefined : { y: contentY, opacity: contentOpacity }}
-        className="mx-auto w-full max-w-[1180px] px-5 sm:px-8"
-      >
-        <div className="max-w-[46rem]">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <Eyebrow>Recruitment open · No experience needed</Eyebrow>
-          </motion.div>
-
-          <h1 className="mt-7 text-[clamp(2.6rem,7.2vw,5.1rem)] leading-[0.98] font-semibold tracking-[-0.045em]">
-            <AnimatedText text="Become the next generation" className="block text-fg" delay={0.15} />
-            <AnimatedText
-              text="cybersecurity professional."
-              className="gradient-text block"
-              delay={0.42}
-            />
-          </h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-7 max-w-xl text-[16px] leading-relaxed text-fg-muted sm:text-[17.5px]"
-            style={{ textWrap: "pretty" }}
-          >
-            Kryptonex is {site.universityShort}&apos;s dedicated cybersecurity and Capture-the-Flag
-            community at the {site.parent} — a {stats.tracks}-topic learning ladder, real
-            practitioners in the room, and a flagship inter-college CTF.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-9 flex flex-wrap items-center gap-3"
-          >
-            <LinkButton href="#recruitment" size="lg">
-              Join Kryptonex
-              <ArrowRight className="h-4 w-4" />
-            </LinkButton>
-            <LinkButton href="#events" variant="secondary" size="lg">
-              <CalendarDays className="h-4 w-4" />
-              View events
-            </LinkButton>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.25, duration: 0.9 }}
-            className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 font-mono text-[11.5px] tracking-[0.08em] text-fg-subtle uppercase"
-          >
-            <span className="flex items-center gap-2">
-              <Terminal className="h-3.5 w-3.5 text-neon" />
-              {stats.members} council members
-            </span>
-            <span className="hidden h-3 w-px bg-line-strong sm:block" />
-            <span>{stats.events} events planned</span>
-            <span className="hidden h-3 w-px bg-line-strong sm:block" />
-            <span>{stats.tracks} security tracks</span>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.7, duration: 0.8 }}
-        aria-label="Scroll to About"
-        data-cursor="hover"
-        className="absolute inset-x-0 bottom-7 z-10 mx-auto flex w-fit flex-col items-center gap-2 text-fg-subtle transition-colors hover:text-fg"
-      >
-        <span className="font-mono text-[10px] tracking-[0.24em] uppercase">Scroll</span>
-        <motion.span
-          animate={reduce ? undefined : { y: [0, 6, 0] }}
-          transition={{ duration: 1.9, repeat: Infinity, ease: "easeInOut" }}
+      {!reduce && (
+        <motion.div
+          aria-hidden
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute inset-x-0 bottom-8 mx-auto hidden w-fit sm:block"
         >
-          <ChevronDown className="h-4 w-4" />
-        </motion.span>
-      </motion.a>
+          <div className="h-10 w-px bg-[linear-gradient(to_bottom,transparent,var(--border-strong))]" />
+        </motion.div>
+      )}
     </section>
   );
 }

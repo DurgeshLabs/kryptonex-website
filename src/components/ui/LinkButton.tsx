@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, type AnchorHTMLAttributes, type ReactNode } from "react";
-import { motion, useMotionValue, useReducedMotion, useSpring } from "framer-motion";
+import Link from "next/link";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { useScrollToId } from "@/lib/hooks";
 import {
@@ -12,69 +12,69 @@ import {
   type ButtonVariant,
 } from "./button-styles";
 
-export interface LinkButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface LinkButtonProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
   href: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  magnetic?: boolean;
   children: ReactNode;
 }
 
-/** Anchor styled as a Button. In-page `#hash` targets get offset-aware smooth scrolling. */
+/**
+ * Routes internal paths through next/link, smooth-scrolls `#hash` targets with a
+ * navbar offset, and opens external links safely.
+ */
 export function LinkButton({
   href,
   variant = "primary",
   size = "md",
-  magnetic = true,
   className,
   children,
   onClick,
   ...props
 }: LinkButtonProps) {
-  const ref = useRef<HTMLAnchorElement | null>(null);
-  const reduce = useReducedMotion();
   const scrollToId = useScrollToId();
+  const classes = cn(buttonBase, buttonSizes[size], buttonVariants[variant], className);
   const isHash = href.startsWith("#");
-  const isExternal = /^https?:\/\//.test(href);
+  const isExternal = /^(https?:|mailto:|tel:)/.test(href);
 
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const x = useSpring(mx, { stiffness: 260, damping: 18, mass: 0.4 });
-  const y = useSpring(my, { stiffness: 260, damping: 18, mass: 0.4 });
-
-  return (
-    <motion.a
-      ref={ref}
-      href={href}
-      style={{ x, y }}
-      whileTap={reduce ? undefined : { scale: 0.97 }}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noreferrer noopener" : undefined}
-      onMouseMove={(e) => {
-        if (!magnetic || reduce) return;
-        const el = ref.current;
-        if (!el) return;
-        const r = el.getBoundingClientRect();
-        mx.set(((e.clientX - r.left) / r.width - 0.5) * 14);
-        my.set(((e.clientY - r.top) / r.height - 0.5) * 10);
-      }}
-      onMouseLeave={() => {
-        mx.set(0);
-        my.set(0);
-      }}
-      onClick={(e) => {
-        if (isHash) {
+  if (isHash) {
+    return (
+      <a
+        href={href}
+        data-cursor="hover"
+        className={classes}
+        onClick={(e) => {
           e.preventDefault();
           scrollToId(href);
           history.replaceState(null, "", href);
-        }
-        onClick?.(e);
-      }}
-      data-cursor="hover"
-      className={cn(buttonBase, buttonSizes[size], buttonVariants[variant], className)}
-      {...(props as React.ComponentProps<typeof motion.a>)}
-    >
+          onClick?.(e);
+        }}
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
+        data-cursor="hover"
+        className={classes}
+        onClick={onClick}
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} data-cursor="hover" className={classes} onClick={onClick} {...props}>
       {children}
-    </motion.a>
+    </Link>
   );
 }

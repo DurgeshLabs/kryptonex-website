@@ -1,0 +1,56 @@
+[
+  {
+    "id": "core-team-recruitment",
+    "title": "Core Team Recruitment",
+    "kicker": "Applications open",
+    "body": "We're building next year's council across all six teams. No experience required — we care about how you think, not what you already know.",
+    "meta": "Closes 15 August",
+    "tone": "accent",
+    "priority": 1,
+    "cta": { "label": "Apply", "href": "/join" },
+    "ticker": "Core Team Recruitment is open"
+  },
+  {
+    "id": "github-bootcamp",
+    "title": "GitHub Bootcamp",
+    "kicker": "Workshop",
+    "body": "Git fundamentals through to pull requests, branching strategy and your first open-source contribution. Bring a laptop.",
+    "meta": "3 August · Lab 402",
+    "tone": "violet",
+    "priority": 2,
+    "cta": { "label": "Register", "href": "/events" },
+    "ticker": "GitHub Bootcamp — 3 August"
+  },
+  {
+    "id": "hackathon-registrations",
+    "title": "Kryptonex Hackathon",
+    "kicker": "Registrations live",
+    "body": "Twenty-four hours, open theme, teams of four. Mentors on the floor from every domain track.",
+    "meta": "₹25,000 prize pool",
+    "tone": "gold",
+    "priority": 3,
+    "cta": { "label": "Register", "href": "/events" },
+    "ticker": "Hackathon registrations are live"
+  },
+  {
+    "id": "cybersecurity-workshop",
+    "title": "Cybersecurity Lab",
+    "kicker": "This Saturday",
+    "body": "Hands-on session in a sanctioned lab environment — recon, web exploitation basics and how a SOC actually triages an alert.",
+    "meta": "Saturday · Lab 402",
+    "tone": "emerald",
+    "priority": 4,
+    "cta": { "label": "Details", "href": "/events" },
+    "ticker": "Cybersecurity Workshop this Saturday"
+  },
+  {
+    "id": "founder-meetup",
+    "title": "Founder Meetup",
+    "kicker": "Coming soon",
+    "body": "An evening with founders who started while still on campus. Fundraising, first hires, and what they'd do differently.",
+    "meta": "Dates to be confirmed",
+    "tone": "neutral",
+    "priority": 5,
+    "ticker": "Founder Meetup — dates coming soon"
+  }
+]

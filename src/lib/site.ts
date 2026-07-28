@@ -1,7 +1,9 @@
 export const site = {
   name: "Kryptonex",
-  shortName: "Kryptonex",
-  tagline: "Break it. Understand it. Defend it.",
+  legalName: "Kryptonex Student Community",
+  tagline: "Build. Learn. Innovate. Lead.",
+  promise:
+    "The student community where builders become founders, cybersecurity professionals, AI engineers and innovators.",
   parent: "School of Technology and Research",
   university: "Dnyaan Prasad Global University",
   universityShort: "DPGU",
@@ -9,26 +11,27 @@ export const site = {
   city: "Pune, India",
   email: "accounts@decloud.org",
   description:
-    "Kryptonex is DPGU's dedicated cybersecurity & Capture-the-Flag community at the School of Technology and Research — turning curious students into capable, ethically-grounded security practitioners.",
+    "Kryptonex is the student innovation community at the School of Technology and Research, DPGU — cybersecurity, AI, development, entrepreneurship and design. We bridge the gap between college and industry.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kryptonex.club",
   keywords: [
     "Kryptonex",
+    "student community",
     "cybersecurity club",
     "CTF",
-    "capture the flag",
+    "hackathon",
     "DPGU",
     "School of Technology and Research",
     "Pune",
-    "ethical hacking",
-    "Digital Fortress CTF",
-    "student security community",
+    "AI club",
+    "open source",
+    "student innovation",
   ],
   links: {
     // Swap in the live recruitment form URL (env or edit here); until then this
     // opens a pre-filled mail to the council rather than pointing at a dead link.
     recruitment:
       process.env.NEXT_PUBLIC_RECRUITMENT_URL ??
-      "mailto:accounts@decloud.org?subject=Kryptonex%20recruitment%20—%20application&body=Name%3A%0ABranch%20%26%20year%3A%0AWhat%20I%27d%20love%20to%20learn%3A%0ATeam%20I%27d%20like%20to%20help%20run%3A",
+      "mailto:accounts@decloud.org?subject=Kryptonex%20recruitment%20—%20application&body=Name%3A%0ABranch%20%26%20year%3A%0AWhat%20I%27d%20love%20to%20build%3A%0ATeam%20I%27d%20like%20to%20join%3A",
     linkedin: "https://www.linkedin.com/company/kryptonex-dpgu",
     instagram: "https://www.instagram.com/kryptonex.dpgu",
     discord: "https://discord.gg/kryptonex",
@@ -36,31 +39,75 @@ export const site = {
   },
 } as const;
 
-export type NavItem = { label: string; href: string };
+export interface NavLink {
+  label: string;
+  href: string;
+  description?: string;
+}
 
-export const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
-  { label: "Tracks", href: "#roadmap" },
-  { label: "Events", href: "#events" },
-  { label: "Digital Fortress", href: "#digital-fortress" },
-  { label: "Team", href: "#team" },
-  { label: "Join", href: "#recruitment" },
+export interface NavGroup {
+  label: string;
+  href?: string;
+  children?: NavLink[];
+}
+
+/** Primary navigation. Groups with children render as a dropdown on desktop. */
+export const navigation: NavGroup[] = [
+  { label: "About", href: "/about" },
+  {
+    label: "Community",
+    children: [
+      { label: "Events", href: "/events", description: "Workshops, hackathons and meetups" },
+      { label: "Announcements", href: "/announcements", description: "What's live right now" },
+      { label: "Gallery", href: "/gallery", description: "Photos from every session" },
+      { label: "Hall of Fame", href: "/hall-of-fame", description: "Members who shipped" },
+    ],
+  },
+  {
+    label: "Work",
+    children: [
+      { label: "Projects", href: "/projects", description: "What members have built" },
+      { label: "Resources", href: "/resources", description: "Curated learning material" },
+      { label: "Blog", href: "/blog", description: "Writeups and field notes" },
+    ],
+  },
+  { label: "Team", href: "/team" },
+  { label: "Contact", href: "/contact" },
 ];
 
-export const sectionIds = [
+/** Flat route list — used by the command palette and sitemap. */
+export const routes = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
+  { path: "/events", label: "Events" },
+  { path: "/announcements", label: "Announcements" },
+  { path: "/gallery", label: "Gallery" },
+  { path: "/resources", label: "Resources" },
+  { path: "/projects", label: "Projects" },
+  { path: "/hall-of-fame", label: "Hall of Fame" },
+  { path: "/team", label: "Team" },
+  { path: "/blog", label: "Blog" },
+  { path: "/join", label: "Join" },
+  { path: "/contact", label: "Contact" },
+] as const;
+
+/** Section anchors on the landing page, in document order. */
+export const homeSections = [
   "hero",
-  "about",
-  "mission",
-  "why-join",
-  "roadmap",
+  "announcements",
   "events",
-  "digital-fortress",
-  "ctf-journey",
-  "stats",
+  "why",
+  "mission",
+  "learning-path",
+  "semester",
+  "numbers",
+  "projects",
+  "hall-of-fame",
   "gallery",
+  "resources",
+  "partners",
   "team",
   "testimonials",
-  "faq",
-  "recruitment",
-  "contact",
+  "newsletter",
+  "join",
 ] as const;

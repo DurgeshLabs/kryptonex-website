@@ -5,14 +5,9 @@ import { site } from "@/lib/site";
 import { BASE_PATH } from "@/lib/utils";
 import "./globals.css";
 
-// Brand guidelines specify Inter for headings and body; mono is reserved for
-// terminal, code and metadata treatments.
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
+// Inter is specified by the DPGU brand guidelines; mono is reserved for
+// metadata, code and terminal treatments.
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono-jb",
@@ -24,7 +19,7 @@ const basePath = BASE_PATH;
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Cybersecurity & CTF Community | ${site.parent}, ${site.universityShort}`,
+    default: `${site.name} — Student Innovation Community | ${site.parent}, ${site.universityShort}`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
@@ -46,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} — Become the next generation cybersecurity professional`,
+    title: `${site.name} — ${site.tagline}`,
     description: site.description,
     url: site.url,
     locale: "en_IN",
@@ -55,14 +50,14 @@ export const metadata: Metadata = {
         url: `${basePath}/brand/kryptonex-logo.jpg`,
         width: 1600,
         height: 1600,
-        alt: `${site.name} — cybersecurity community at ${site.parent}`,
+        alt: `${site.name} — student innovation community at ${site.parent}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Cybersecurity & CTF Community`,
-    description: site.tagline,
+    title: `${site.name} — ${site.tagline}`,
+    description: site.promise,
     images: [`${basePath}/brand/kryptonex-logo.jpg`],
   },
   robots: {
@@ -75,7 +70,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#050505" },
-    { media: "(prefers-color-scheme: light)", color: "#fbfbfc" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -86,11 +81,12 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: site.name,
-  alternateName: `${site.name} Cybersecurity Community`,
+  alternateName: site.legalName,
   description: site.description,
   url: site.url,
   email: site.email,
   logo: `${site.url}${basePath}/brand/kryptonex-logo.jpg`,
+  slogan: site.tagline,
   parentOrganization: {
     "@type": "CollegeOrUniversity",
     name: site.university,
@@ -100,10 +96,12 @@ const organizationSchema = {
   sameAs: [site.links.linkedin, site.links.instagram, site.links.github],
   knowsAbout: [
     "Cybersecurity",
+    "Artificial Intelligence",
+    "Software development",
+    "Entrepreneurship",
+    "Design",
     "Capture the Flag",
-    "Ethical hacking",
-    "Digital forensics",
-    "Web application security",
+    "Open source",
   ],
 };
 
@@ -113,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.variable} ${jetbrains.variable} antialiased`}>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10001] focus:rounded-lg focus:bg-surface focus:px-4 focus:py-2.5 focus:text-sm focus:text-fg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10001] focus:rounded-md focus:bg-surface focus:px-4 focus:py-2.5 focus:text-sm focus:text-fg"
         >
           Skip to content
         </a>

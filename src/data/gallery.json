@@ -1,65 +1,65 @@
 [
   {
-    "id": "workshop",
-    "title": "Workshop",
-    "caption": "Hands on keyboards, lab VMs open, everyone breaking the same target.",
-    "tag": "Sessions",
+    "id": "workshop-lab",
+    "title": "Lab Session",
+    "caption": "Hands on keyboards, environments open, everyone working the same target.",
+    "category": "Workshops",
     "span": "lg",
     "hue": 214
   },
   {
-    "id": "team",
-    "title": "Team",
-    "caption": "Thirty-six members across six teams, one council.",
-    "tag": "People",
+    "id": "hackathon-floor",
+    "title": "Hackathon Floor",
+    "caption": "Hour nineteen. Four monitors, one working demo, no regrets yet.",
+    "category": "Hackathons",
     "span": "md",
-    "hue": 258
+    "hue": 38
   },
   {
-    "id": "network",
-    "title": "Network",
-    "caption": "Packet captures on the projector, protocols read off the wire.",
-    "tag": "Technical",
+    "id": "industry-visit",
+    "title": "Industry Visit",
+    "caption": "Inside a working engineering floor, asking the questions a syllabus can't answer.",
+    "category": "Industry Visits",
     "span": "md",
     "hue": 190
   },
   {
-    "id": "ctf",
-    "title": "CTF",
-    "caption": "Scoreboard live, clock running, six categories open.",
-    "tag": "Competition",
+    "id": "meetup-talk",
+    "title": "Founder Meetup",
+    "caption": "Founders who started on campus, on what they'd do differently.",
+    "category": "Meetups",
     "span": "xl",
-    "hue": 38
+    "hue": 32
   },
   {
-    "id": "code",
-    "title": "Code",
-    "caption": "Exploit scripts, tooling and the writeups that follow.",
-    "tag": "Technical",
+    "id": "open-source-sprint",
+    "title": "Open Source Sprint",
+    "caption": "Reading someone else's codebase until the first pull request lands.",
+    "category": "Workshops",
     "span": "md",
-    "hue": 145
+    "hue": 158
   },
   {
-    "id": "collaboration",
-    "title": "Collaboration",
-    "caption": "Squads splitting categories and handing off cleanly.",
-    "tag": "People",
+    "id": "community-night",
+    "title": "Community Night",
+    "caption": "The part of the club that isn't on any curriculum.",
+    "category": "Community",
     "span": "md",
-    "hue": 280
+    "hue": 262
   },
   {
-    "id": "speakers",
-    "title": "Speakers",
-    "caption": "Practitioners from SOC floors, bounty programmes and red teams.",
-    "tag": "Sessions",
+    "id": "ctf-scoreboard",
+    "title": "CTF Weekend",
+    "caption": "Scoreboard live, clock running, six categories open.",
+    "category": "Hackathons",
     "span": "lg",
-    "hue": 356
+    "hue": 340
   },
   {
-    "id": "fortress",
-    "title": "Digital Fortress",
-    "caption": "The flagship. Eight hours, colleges from across Pune.",
-    "tag": "Competition",
+    "id": "setup-crew",
+    "title": "Setup Crew",
+    "caption": "Two hours before doors open. The part nobody photographs.",
+    "category": "Behind The Scenes",
     "span": "md",
     "hue": 24
   }

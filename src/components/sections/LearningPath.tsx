@@ -6,14 +6,14 @@ import { Section, SectionHeader, Reveal } from "@/components/ui/Section";
 import { learningPath } from "@/data";
 import { cn } from "@/lib/utils";
 
-export function LearningPath() {
+export function LearningPath({ index }: { index?: string } = {}) {
   const [active, setActive] = useState(0);
   const step = learningPath[active];
 
   return (
     <Section id="learning-path" bordered>
       <SectionHeader
-        index="05"
+        index={index}
         eyebrow="Learning journey"
         title="From your first session to your first company."
         description="Eight stages. Most members move through the first four in a year — the rest depends on how far you want to take it."

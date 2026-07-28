@@ -5,11 +5,11 @@ import { Eyebrow } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Section";
 import { partners } from "@/data";
 
-export function Partners() {
+export function Partners({ index }: { index?: string } = {}) {
   return (
     <Section id="partners" bordered>
       <Reveal className="flex flex-col gap-4">
-        <Eyebrow index="12">Partners & collaborators</Eyebrow>
+        <Eyebrow index={index}>Partners & collaborators</Eyebrow>
         <p className="max-w-2xl text-[15.5px] leading-[1.65] text-fg-muted">
           Organisations and communities that have supported Kryptonex sessions, competitions and
           member programmes.

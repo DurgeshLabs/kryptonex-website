@@ -6,11 +6,11 @@ import { Eyebrow } from "@/components/ui/Badge";
 import { Counter } from "@/components/ui/Counter";
 import { communityStats } from "@/data";
 
-export function CommunityNumbers() {
+export function CommunityNumbers({ index }: { index?: string } = {}) {
   return (
     <Section id="numbers" bordered>
       <div className="flex flex-col gap-3">
-        <Eyebrow index="07">Community</Eyebrow>
+        <Eyebrow index={index}>Community</Eyebrow>
         <h2 className="max-w-xl text-[clamp(1.85rem,3.6vw,2.75rem)] leading-[1.08] font-semibold tracking-[-0.032em] text-fg">
           The community in numbers
         </h2>

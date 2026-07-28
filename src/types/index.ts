@@ -139,13 +139,6 @@ export interface GalleryItem {
   hue: number;
 }
 
-export interface Testimonial {
-  id: string;
-  quote: string;
-  attribution: string;
-  context: string;
-}
-
 export interface BlogPost {
   id: string;
   title: string;

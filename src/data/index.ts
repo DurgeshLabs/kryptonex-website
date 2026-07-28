@@ -11,7 +11,6 @@ import projectsJson from "./projects.json";
 import resourcesJson from "./resources.json";
 import semesterRoadmapJson from "./semester-roadmap.json";
 import teamJson from "./team.json";
-import testimonialsJson from "./testimonials.json";
 
 import type {
   Announcement,
@@ -27,7 +26,6 @@ import type {
   ResourceCategory,
   SemesterMonth,
   TeamMember,
-  Testimonial,
 } from "@/types";
 
 export const events = (eventsJson as KxEvent[]).slice().sort((a, b) => a.date.localeCompare(b.date));
@@ -48,7 +46,6 @@ export const partners = partnersJson as Partner[];
 export const communityStats = communityStatsJson as CommunityStat[];
 export const team = teamJson as TeamMember[];
 export const gallery = galleryJson as GalleryItem[];
-export const testimonials = testimonialsJson as Testimonial[];
 export const blogPosts = (blogJson as BlogPost[]).slice().sort((a, b) => b.date.localeCompare(a.date));
 
 export const eventTypes = [

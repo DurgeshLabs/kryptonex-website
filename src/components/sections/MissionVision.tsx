@@ -11,10 +11,10 @@ const VALUES = [
   { label: "Lead", body: "Hand the community over stronger than you found it." },
 ];
 
-export function MissionVision() {
+export function MissionVision({ index }: { index?: string } = {}) {
   return (
     <Section id="mission" bordered>
-      <Eyebrow index="04">Mission & vision</Eyebrow>
+      <Eyebrow index={index}>Mission & vision</Eyebrow>
 
       <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-line bg-[var(--border)] lg:grid-cols-2">
         {[

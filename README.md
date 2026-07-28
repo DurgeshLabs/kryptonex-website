@@ -21,7 +21,7 @@ Kryptonex is the student community where builders become founders, cybersecurity
 AI engineers and innovators. This site is its public front door — announcements, the event
 calendar, the learning path, member projects, the resource library, the council and recruitment.
 
-A multi-page Next.js application with twelve routes and a nineteen-section landing page.
+A multi-page Next.js application with twelve routes and an eleven-section landing page.
 Everything it displays is **data-driven**: the stats band, command palette, event timeline,
 roster, projects and resources all derive from JSON files in `src/data`. Update the data, and the
 whole site updates.
@@ -49,7 +49,8 @@ Then open <http://localhost:3000>.
 
 | Route            | What it is                                                |
 | ---------------- | --------------------------------------------------------- |
-| `/`              | Landing page — 19 sections, hero through join CTA          |
+| `/`              | Landing page — hero, announcements, events, why, mission,  |
+|                  | numbers, gallery, partners, resources, team, newsletter    |
 | `/about`         | Story, mission and vision, learning path, numbers          |
 | `/events`        | Full calendar, filterable by time, type and keyword        |
 | `/announcements` | Everything currently open                                  |
@@ -95,7 +96,6 @@ All content lives in `src/data`. No component changes are needed for routine upd
 | `partners.json`         | The partner marquee                                  |
 | `team.json`             | Leadership grid and the searchable roster            |
 | `gallery.json`          | Gallery tiles and the lightbox                       |
-| `testimonials.json`     | The auto-advancing quote carousel                    |
 | `blog.json`             | The blog index                                       |
 
 ### Placeholders to replace

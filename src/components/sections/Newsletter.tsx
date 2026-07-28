@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
  * email to the council rather than pretending to POST to an endpoint. Swap in a
  * real form action (Buttondown, Mailchimp, Formspree) when one exists.
  */
-export function Newsletter() {
+export function Newsletter({ index }: { index?: string } = {}) {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
 
@@ -30,7 +30,7 @@ export function Newsletter() {
       <Reveal>
         <div className="panel grid gap-8 rounded-lg p-8 sm:p-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
-            <Eyebrow index="15">Newsletter</Eyebrow>
+            <Eyebrow index={index}>Newsletter</Eyebrow>
             <h2 className="mt-5 text-[clamp(1.7rem,3.2vw,2.4rem)] leading-[1.1] font-semibold tracking-[-0.035em] text-fg">
               Never miss an event
             </h2>

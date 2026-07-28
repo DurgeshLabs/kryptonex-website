@@ -8,11 +8,11 @@ import { DomainIcon } from "@/components/ui/DomainIcon";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { derived, resources } from "@/data";
 
-export function ResourceLibrary() {
+export function ResourceLibrary({ index }: { index?: string } = {}) {
   return (
     <Section id="resources" bordered>
       <SectionHeader
-        index="11"
+        index={index}
         eyebrow="Resource library"
         title="Everything we teach, written down"
         description={`${derived.resourceCount} curated guides across seven categories — the same material members work through in sessions, kept in one place.`}

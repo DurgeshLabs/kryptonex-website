@@ -23,11 +23,11 @@ const SOCIALS = [
   { label: "Instagram", icon: Instagram },
 ];
 
-export function LeadershipTeam() {
+export function LeadershipTeam({ index }: { index?: string } = {}) {
   return (
     <Section id="team" bordered>
       <SectionHeader
-        index="13"
+        index={index}
         eyebrow="Leadership"
         title="The people running it"
         description={`A council of ${derived.councilSize} across ${derived.teams} teams. These are the leads — the full roster is on the team page.`}

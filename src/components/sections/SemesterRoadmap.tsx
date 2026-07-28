@@ -6,11 +6,11 @@ import { Badge } from "@/components/ui/Badge";
 import { semesterRoadmap } from "@/data";
 import { cn } from "@/lib/utils";
 
-export function SemesterRoadmap() {
+export function SemesterRoadmap({ index }: { index?: string } = {}) {
   return (
     <Section id="semester" bordered>
       <SectionHeader
-        index="06"
+        index={index}
         eyebrow="This semester"
         title="What's coming, month by month"
         description="The season is planned end to end so members can commit to a track knowing what lands when."

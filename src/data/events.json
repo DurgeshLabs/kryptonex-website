@@ -1,0 +1,264 @@
+[
+  {
+    "id": "kickoff-matrix",
+    "name": "Kryptonex Kickoff: Welcome to the Matrix",
+    "type": "Guest Talk",
+    "status": "Planning",
+    "date": "2025-06-24",
+    "expectedAttendees": 40,
+    "summary": "The season opener. What Kryptonex is becoming, how the security tracks work, and how to plug in from day one."
+  },
+  {
+    "id": "cyber-quest-beginner-ctf",
+    "name": "Cyber Quest: Beginner CTF",
+    "type": "Competition",
+    "status": "Planning",
+    "date": "2025-06-28",
+    "expectedAttendees": 25,
+    "summary": "A gentle first Capture-the-Flag. Guided challenges, hints on tap, and no prior experience assumed."
+  },
+  {
+    "id": "linux-cli-fundamentals",
+    "name": "Linux & CLI Fundamentals",
+    "type": "Workshop",
+    "status": "Planning",
+    "date": "2025-07-08",
+    "expectedAttendees": 20,
+    "summary": "The floor of the ladder. Filesystem, permissions, processes, pipes — the shell fluency every other track depends on."
+  },
+  {
+    "id": "day-in-life-soc",
+    "name": "A Day in the Life of a SOC Analyst",
+    "type": "Guest Talk",
+    "status": "Idea",
+    "date": "2025-07-22",
+    "expectedAttendees": 30,
+    "summary": "A working SOC analyst walks through a real shift: alerts, triage, escalation, and what the job actually feels like."
+  },
+  {
+    "id": "hacker-movie-night",
+    "name": "Hacker Movie Night: WarGames",
+    "type": "Social",
+    "status": "Idea",
+    "date": "2025-07-29",
+    "expectedAttendees": 15,
+    "summary": "Screening plus commentary. Which parts the 1983 classic got right, and which parts aged into folklore."
+  },
+  {
+    "id": "web-security-101",
+    "name": "Web Security 101 — OWASP Top 10",
+    "type": "Workshop",
+    "status": "Idea",
+    "date": "2025-08-05",
+    "expectedAttendees": 20,
+    "summary": "Injection, broken access control, XSS and friends — demonstrated live in a lab you can break safely."
+  },
+  {
+    "id": "breaking-in-careers",
+    "name": "Breaking In: Career Paths in Cybersecurity",
+    "type": "Guest Talk",
+    "status": "Idea",
+    "date": "2025-08-12",
+    "expectedAttendees": 35,
+    "summary": "Red team, blue team, GRC, AppSec, research. What each path rewards and what the first two years look like."
+  },
+  {
+    "id": "phishing-phrenzy",
+    "name": "Phishing Phrenzy: Social Engineering Mini-Game",
+    "type": "Social",
+    "status": "Idea",
+    "date": "2025-08-19",
+    "expectedAttendees": 20,
+    "summary": "Spot the lure. A fast, competitive game on pretexting, spoofed domains and the human layer of security."
+  },
+  {
+    "id": "network-wifi-basics",
+    "name": "Network Security & Wi-Fi Hacking Basics",
+    "type": "Workshop",
+    "status": "Idea",
+    "date": "2025-09-16",
+    "expectedAttendees": 15,
+    "summary": "Packets, protocols and captures. Reading traffic in Wireshark and understanding how wireless auth breaks."
+  },
+  {
+    "id": "threat-landscape-2026",
+    "name": "The Threat Landscape: What's Coming in 2026",
+    "type": "Guest Talk",
+    "status": "Idea",
+    "date": "2025-09-23",
+    "expectedAttendees": 30,
+    "summary": "Where attacker economics are heading, and which defensive skills are about to be in short supply."
+  },
+  {
+    "id": "crypto-cipher-night",
+    "name": "Crypto Puzzles & Cipher Night",
+    "type": "Social",
+    "status": "Idea",
+    "date": "2025-09-30",
+    "expectedAttendees": 20,
+    "summary": "Classical ciphers to modern misuse. Snacks, whiteboards, and a leaderboard that gets loud."
+  },
+  {
+    "id": "digital-fortress",
+    "name": "Digital Fortress — Inter-College CTF",
+    "type": "Competition",
+    "status": "Idea",
+    "date": "2025-10-14",
+    "expectedAttendees": 50,
+    "flagship": true,
+    "summary": "Our flagship. Eight hours, six categories, teams from colleges across Pune, one live scoreboard."
+  },
+  {
+    "id": "reverse-engineering-beginners",
+    "name": "Reverse Engineering for Beginners",
+    "type": "Workshop",
+    "status": "Idea",
+    "date": "2025-11-04",
+    "expectedAttendees": 15,
+    "summary": "From source to assembly and back. Static analysis, disassemblers, and finding the check you need to defeat."
+  },
+  {
+    "id": "ai-in-cybersecurity",
+    "name": "AI in Cybersecurity: Friend or Foe?",
+    "type": "Guest Talk",
+    "status": "Idea",
+    "date": "2025-11-11",
+    "expectedAttendees": 30,
+    "summary": "Model-assisted defence versus model-assisted attack, and where the honest limits currently sit."
+  },
+  {
+    "id": "cyber-trivia-night",
+    "name": "Cybersecurity Trivia Night",
+    "type": "Social",
+    "status": "Idea",
+    "date": "2025-11-18",
+    "expectedAttendees": 25,
+    "summary": "Breaches, CVEs, protocol lore and internet history. Teams of four, rapid rounds, small prizes."
+  },
+  {
+    "id": "holiday-hack-challenge",
+    "name": "Holiday Hack Challenge (Online)",
+    "type": "Competition",
+    "status": "Idea",
+    "date": "2025-12-20",
+    "expectedAttendees": 15,
+    "summary": "A remote, run-at-your-own-pace challenge set to keep the streak alive over the winter break."
+  },
+  {
+    "id": "spring-kickoff-bug-bounty",
+    "name": "Spring Kickoff + Bug Bounty Basics",
+    "type": "Workshop",
+    "status": "Idea",
+    "date": "2026-01-13",
+    "expectedAttendees": 20,
+    "summary": "Semester reset. Scope, safe-harbour rules, recon workflow and how a bounty programme actually reads reports."
+  },
+  {
+    "id": "bug-bounty-zero-to-first",
+    "name": "Bug Bounty Hunting: From Zero to First Bug",
+    "type": "Guest Talk",
+    "status": "Idea",
+    "date": "2026-01-20",
+    "expectedAttendees": 30,
+    "summary": "A hunter walks through their first valid finding — the dead ends included."
+  },
+  {
+    "id": "lockpick-village",
+    "name": "Lockpick Village & Physical Security",
+    "type": "Social",
+    "status": "Idea",
+    "date": "2026-01-27",
+    "expectedAttendees": 20,
+    "summary": "Tailgating, badge cloning and pin tumblers. Security is not only a software problem."
+  },
+  {
+    "id": "cloud-security-fundamentals",
+    "name": "Cloud Security Fundamentals (AWS / Azure)",
+    "type": "Workshop",
+    "status": "Idea",
+    "date": "2026-02-10",
+    "expectedAttendees": 15,
+    "summary": "Identity, roles and the shared responsibility model — plus the misconfigurations that leak buckets."
+  },
+  {
+    "id": "red-vs-blue-live",
+    "name": "Red Team vs Blue Team: A Live Demo",
+    "type": "Guest Talk",
+    "status": "Idea",
+    "date": "2026-02-17",
+    "expectedAttendees": 35,
+    "summary": "Two practitioners, one lab range. Attack on the left screen, detection on the right, narrated in real time."
+  },
+  {
+    "id": "spring-ctf-ice-breaker",
+    "name": "Kryptonex Spring CTF — Ice Breaker",
+    "type": "Competition",
+    "status": "Idea",
+    "date": "2026-02-24",
+    "expectedAttendees": 25,
+    "summary": "An internal CTF to blood new members and rotate teams before the next flagship cycle."
+  },
+  {
+    "id": "digital-forensics-breach",
+    "name": "Digital Forensics: Investigating a Breach",
+    "type": "Workshop",
+    "status": "Idea",
+    "date": "2026-03-10",
+    "expectedAttendees": 15,
+    "summary": "Disk and memory artefacts, timeline reconstruction, and writing a finding someone else can act on."
+  },
+  {
+    "id": "women-in-cybersecurity",
+    "name": "Women in Cybersecurity: Breaking Barriers",
+    "type": "Guest Talk",
+    "status": "Idea",
+    "date": "2026-03-17",
+    "expectedAttendees": 30,
+    "summary": "Practitioners on entering the field, building credibility, and the networks that made a difference."
+  },
+  {
+    "id": "privacy-vs-security-debate",
+    "name": "Cybersecurity Debate: Privacy vs Security",
+    "type": "Social",
+    "status": "Idea",
+    "date": "2026-03-24",
+    "expectedAttendees": 25,
+    "summary": "Structured debate on encryption, surveillance and lawful access. Sides assigned, not chosen."
+  },
+  {
+    "id": "mobile-app-hacking",
+    "name": "Mobile App Hacking Workshop",
+    "type": "Workshop",
+    "status": "Idea",
+    "date": "2026-04-07",
+    "expectedAttendees": 15,
+    "summary": "APK teardown, insecure storage, traffic interception and certificate pinning bypasses on a test app."
+  },
+  {
+    "id": "home-lab-build",
+    "name": "Building a Home Lab for Cybersecurity",
+    "type": "Guest Talk",
+    "status": "Idea",
+    "date": "2026-04-14",
+    "expectedAttendees": 25,
+    "summary": "Cheap hardware, virtualisation, vulnerable VMs and a practice environment you actually keep using."
+  },
+  {
+    "id": "kryptonex-awards-night",
+    "name": "Year-End Showcase & Kryptonex Awards Night",
+    "type": "Social",
+    "status": "Idea",
+    "date": "2026-04-21",
+    "expectedAttendees": 40,
+    "summary": "Project showcase, season highlights, and awards for the members who carried the year."
+  },
+  {
+    "id": "kryptonex-kickoff-meetup",
+    "name": "Kryptonex Kickoff Meetup",
+    "type": "Meetup",
+    "status": "Planning",
+    "date": "2026-08-20",
+    "expectedAttendees": 60,
+    "summary": "New academic year, new intake. Meet the council, see the tracks, and pick where you want to start."
+  }
+]

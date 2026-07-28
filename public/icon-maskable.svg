@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kryptonex">
+  <defs>
+    <linearGradient id="gm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e5c07f"/>
+      <stop offset="1" stop-color="#d1a550"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" fill="#0a0a0b"/>
+  <g transform="translate(32 32) scale(0.72) translate(-32 -32)">
+    <path d="M32 9 51 15v18c0 12.5-8 20.2-19 24-11-3.8-19-11.5-19-24V15L32 9Z" fill="#b22b2f"/>
+    <path d="M32 9 51 15v18c0 12.5-8 20.2-19 24-11-3.8-19-11.5-19-24V15L32 9Zm0 3.2L16 17.2v15.8c0 10.6 6.5 17.2 16 20.7 9.5-3.5 16-10.1 16-20.7V17.2L32 12.2Z" fill="url(#gm)"/>
+    <path d="M25 21h5v8.4L38.2 21H45l-9.6 9.9L45.4 44h-6.6l-6.6-9.1L30 36.7V44h-5V21Z" fill="url(#gm)"/>
+  </g>
+</svg>

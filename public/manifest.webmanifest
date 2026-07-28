@@ -1,0 +1,33 @@
+{
+  "name": "Kryptonex — Cybersecurity & CTF Community",
+  "short_name": "Kryptonex",
+  "description": "DPGU's dedicated cybersecurity and Capture-the-Flag community at the School of Technology and Research, Pune.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity"],
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "brand/kryptonex-logo.jpg",
+      "sizes": "1600x1600",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

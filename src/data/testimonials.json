@@ -1,0 +1,50 @@
+[
+  {
+    "id": "voice-mission",
+    "quote": "Instead of being number fifty at everything, we decided to be number one at one thing. Every session, every CTF and every guest talk this year points at the same target.",
+    "attribution": "Kryptonex Council",
+    "context": "On the new direction"
+  },
+  {
+    "id": "voice-zero",
+    "quote": "You do not need to arrive knowing anything. You need to be the kind of person who opens the thing up to see how it works — we can teach the rest in order.",
+    "attribution": "Kryptonex Council",
+    "context": "On open recruitment"
+  },
+  {
+    "id": "voice-ladder",
+    "quote": "Twelve topics, in sequence, starting at the command line. No jumping straight to the exciting part, because the exciting part only makes sense once the boring part is automatic.",
+    "attribution": "Technical Team",
+    "context": "On the learning ladder"
+  },
+  {
+    "id": "voice-industry",
+    "quote": "We bring in people who do this for a living — SOC analysts, bounty hunters, red teamers — so members hear how the field actually works rather than how a syllabus says it works.",
+    "attribution": "Events Team",
+    "context": "On industry sessions"
+  },
+  {
+    "id": "voice-fortress",
+    "quote": "Eight hours, six categories, colleges from across Pune on one scoreboard. Digital Fortress is the thing we want this club to be known for outside our own campus.",
+    "attribution": "Kryptonex Council",
+    "context": "On Digital Fortress"
+  },
+  {
+    "id": "voice-ethics",
+    "quote": "Break it, understand it, defend it — in that order, inside a lab, with permission. The ethics are not a disclaimer bolted on at the end; they are the first thing we teach.",
+    "attribution": "Kryptonex Council",
+    "context": "On ethical grounding"
+  },
+  {
+    "id": "voice-roots",
+    "quote": "We are not leaving our roots. GitSetGo, Tech Rush and the industry visits built the foundation — we are stacking a serious security community on top of it.",
+    "attribution": "Kryptonex Council",
+    "context": "On the club's evolution"
+  },
+  {
+    "id": "voice-documentation",
+    "quote": "A photographer at every event, a writeup after every CTF. Six months of documentation is the difference between a club that happened and a club people remember.",
+    "attribution": "Documentation Team",
+    "context": "On building a record"
+  }
+]

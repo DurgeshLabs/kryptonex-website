@@ -1,0 +1,66 @@
+[
+  {
+    "id": "workshop",
+    "title": "Workshop",
+    "caption": "Hands on keyboards, lab VMs open, everyone breaking the same target.",
+    "tag": "Sessions",
+    "span": "lg",
+    "hue": 214
+  },
+  {
+    "id": "team",
+    "title": "Team",
+    "caption": "Thirty-six members across six teams, one council.",
+    "tag": "People",
+    "span": "md",
+    "hue": 258
+  },
+  {
+    "id": "network",
+    "title": "Network",
+    "caption": "Packet captures on the projector, protocols read off the wire.",
+    "tag": "Technical",
+    "span": "md",
+    "hue": 190
+  },
+  {
+    "id": "ctf",
+    "title": "CTF",
+    "caption": "Scoreboard live, clock running, six categories open.",
+    "tag": "Competition",
+    "span": "xl",
+    "hue": 38
+  },
+  {
+    "id": "code",
+    "title": "Code",
+    "caption": "Exploit scripts, tooling and the writeups that follow.",
+    "tag": "Technical",
+    "span": "md",
+    "hue": 145
+  },
+  {
+    "id": "collaboration",
+    "title": "Collaboration",
+    "caption": "Squads splitting categories and handing off cleanly.",
+    "tag": "People",
+    "span": "md",
+    "hue": 280
+  },
+  {
+    "id": "speakers",
+    "title": "Speakers",
+    "caption": "Practitioners from SOC floors, bounty programmes and red teams.",
+    "tag": "Sessions",
+    "span": "lg",
+    "hue": 356
+  },
+  {
+    "id": "fortress",
+    "title": "Digital Fortress",
+    "caption": "The flagship. Eight hours, colleges from across Pune.",
+    "tag": "Competition",
+    "span": "md",
+    "hue": 24
+  }
+]

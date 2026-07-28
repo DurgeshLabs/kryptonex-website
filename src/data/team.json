@@ -1,0 +1,254 @@
+[
+  {
+    "id": "poonam-raskar",
+    "name": "Prof. Poonam Raskar",
+    "role": "Faculty Advisor",
+    "team": "Leadership",
+    "seniority": "faculty"
+  },
+  {
+    "id": "durgesh-wankhede",
+    "name": "Durgesh Jitendra Wankhede",
+    "role": "President",
+    "team": "Leadership",
+    "seniority": "lead"
+  },
+  {
+    "id": "avaneesh-yajurvedi",
+    "name": "Avaneesh Yajurvedi",
+    "role": "Vice President",
+    "team": "Leadership",
+    "seniority": "lead"
+  },
+  {
+    "id": "priya-karnawat",
+    "name": "Priya Harisingh Karnawat",
+    "role": "Treasurer",
+    "team": "Leadership",
+    "seniority": "lead"
+  },
+  {
+    "id": "vallabh-chikhale",
+    "name": "Vallabh Chikhale",
+    "role": "Tech Lead",
+    "team": "Technical",
+    "seniority": "lead"
+  },
+  {
+    "id": "yash-bhanushali",
+    "name": "Yash Vasant Bhanushali",
+    "role": "Tech Lead",
+    "team": "Technical",
+    "seniority": "lead"
+  },
+  {
+    "id": "shravanee-bandale",
+    "name": "Shravanee Prasad Bandale",
+    "role": "Event Lead",
+    "team": "Events",
+    "seniority": "lead"
+  },
+  {
+    "id": "shaikh-muazzam",
+    "name": "Shaikh Muazzam",
+    "role": "Event Lead",
+    "team": "Events",
+    "seniority": "lead"
+  },
+  {
+    "id": "arnav-kshirsagar",
+    "name": "Arnav Nilesh Kshirsagar",
+    "role": "Sponsorship Head",
+    "team": "Sponsorship",
+    "seniority": "lead"
+  },
+  {
+    "id": "arsalaan-ahmad",
+    "name": "Arsalaan Ahmad",
+    "role": "Sponsorship Head",
+    "team": "Sponsorship",
+    "seniority": "lead"
+  },
+  {
+    "id": "samruddhi-bhosale",
+    "name": "Samruddhi Bhosale",
+    "role": "Documentation Head",
+    "team": "Documentation",
+    "seniority": "lead"
+  },
+  {
+    "id": "sanskar-virat",
+    "name": "Sanskar Virat",
+    "role": "Documentation Head",
+    "team": "Documentation",
+    "seniority": "lead"
+  },
+  {
+    "id": "arya-joshi",
+    "name": "Arya Joshi",
+    "role": "Core Member",
+    "team": "Technical",
+    "seniority": "core"
+  },
+  {
+    "id": "vaishnavi-mahajan",
+    "name": "Vaishnavi Ganesh Mahajan",
+    "role": "Core Member",
+    "team": "Technical",
+    "seniority": "core"
+  },
+  {
+    "id": "ahmedraza-sayyed",
+    "name": "AhmedRaza Aejaz Sayyed",
+    "role": "Core Member",
+    "team": "Technical",
+    "seniority": "core"
+  },
+  {
+    "id": "devansh-deshmukh",
+    "name": "Devansh Deshmukh",
+    "role": "Core Member",
+    "team": "Technical",
+    "seniority": "core"
+  },
+  {
+    "id": "khushal-raythore",
+    "name": "Khushal Raythore",
+    "role": "Core Member",
+    "team": "Technical",
+    "seniority": "core"
+  },
+  {
+    "id": "sujal-patil",
+    "name": "Sujal Baburao Patil",
+    "role": "Core Member",
+    "team": "Technical",
+    "seniority": "core"
+  },
+  {
+    "id": "bhavya-shrivastava",
+    "name": "Bhavya Shrivastava",
+    "role": "Core Member",
+    "team": "Events",
+    "seniority": "core"
+  },
+  {
+    "id": "vedika-yadav",
+    "name": "Vedika Sudheer Yadav",
+    "role": "Core Member",
+    "team": "Events",
+    "seniority": "core"
+  },
+  {
+    "id": "ann-saji-kurian",
+    "name": "Ann Saji Kurian",
+    "role": "Core Member",
+    "team": "Events",
+    "seniority": "core"
+  },
+  {
+    "id": "vanshree-mirg",
+    "name": "Vanshree Mirg",
+    "role": "Core Member",
+    "team": "Events",
+    "seniority": "core"
+  },
+  {
+    "id": "sarthak-shelke",
+    "name": "Sarthak Satish Shelke",
+    "role": "Core Member",
+    "team": "Events",
+    "seniority": "core"
+  },
+  {
+    "id": "anushka-darunkar",
+    "name": "Anushka Darunkar",
+    "role": "Core Member",
+    "team": "Marketing",
+    "seniority": "core"
+  },
+  {
+    "id": "atharv-barge",
+    "name": "Atharv Madan Barge",
+    "role": "Core Member",
+    "team": "Marketing",
+    "seniority": "core"
+  },
+  {
+    "id": "bhavesh-chaudhari",
+    "name": "Bhavesh P Chaudhari",
+    "role": "Core Member",
+    "team": "Marketing",
+    "seniority": "core"
+  },
+  {
+    "id": "yashika-dhumal",
+    "name": "Yashika Dhumal",
+    "role": "Core Member",
+    "team": "Marketing",
+    "seniority": "core"
+  },
+  {
+    "id": "angel-srivastava",
+    "name": "Angel Srivastava",
+    "role": "Core Member",
+    "team": "Marketing",
+    "seniority": "core"
+  },
+  {
+    "id": "ratnadip-kakade",
+    "name": "Ratnadip Santosh Kakade",
+    "role": "Core Member",
+    "team": "Marketing",
+    "seniority": "core"
+  },
+  {
+    "id": "parth-warkari",
+    "name": "Parth Shyam Warkari",
+    "role": "Core Member",
+    "team": "Sponsorship",
+    "seniority": "core"
+  },
+  {
+    "id": "omkar-chavan",
+    "name": "Omkar Chavan",
+    "role": "Core Member",
+    "team": "Sponsorship",
+    "seniority": "core"
+  },
+  {
+    "id": "vedansh-bhatia",
+    "name": "Vedansh Bhatia",
+    "role": "Core Member",
+    "team": "Sponsorship",
+    "seniority": "core"
+  },
+  {
+    "id": "anuj-deore",
+    "name": "Anuj Deore",
+    "role": "Core Member",
+    "team": "Documentation",
+    "seniority": "core"
+  },
+  {
+    "id": "shrutika-bhand",
+    "name": "Shrutika Bhand",
+    "role": "Core Member",
+    "team": "Documentation",
+    "seniority": "core"
+  },
+  {
+    "id": "arya-jain",
+    "name": "Arya Jain",
+    "role": "Core Member",
+    "team": "Documentation",
+    "seniority": "core"
+  },
+  {
+    "id": "samartha-chavan",
+    "name": "Samartha Chavan",
+    "role": "Core Member",
+    "team": "Documentation",
+    "seniority": "core"
+  }
+]
